@@ -9,7 +9,7 @@
 typedef struct s_node
 {
 	int				value;
-	int				index; // NOVO
+	int				index;
 	struct s_node	*prev;
 	struct s_node	*next;
 }	t_node;
@@ -21,6 +21,6 @@ typedef struct s_stack
 	size_t	size;
 }	t_stack;
 
-float	normalize_index(t_stack *a); //NOVO
+float	normalize_index(t_stack *a);
 
 #endif

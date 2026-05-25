@@ -10,6 +10,7 @@
 typedef struct s_node
 {
 	int				value;
+	int				index; 
 	struct s_node	*prev;
 	struct s_node	*next;
 }	t_node;
@@ -23,6 +24,7 @@ typedef struct s_stack
 
 //declaracao de funcoes
 char	**ft_split(char const *s, char c);
-int	ft_atoi(char *str);
+int		ft_atoi(char *str);
+float	normalize_index(t_stack *a);
 
 #endif
