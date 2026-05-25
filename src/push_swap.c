@@ -9,16 +9,17 @@ dar free da memoria */
 
 int main (int argc, char ** argv)
 {
-    //declarar variaveis struct para linkedlist a e b
-    
-    // inicializar a NULL
+    t_stack	*a;
+	t_stack	*b;
+
+	a = NULL;
+	b = NULL;
     //validar se chamada tem argumentos e se str nao e nula
-    /*If no parameters are specified, the program must not display anything and give the
-prompt back */
     if (argc == 1 || (argc == 2 && !argv[1][0]))
         return(0);
+
     // split da string em strings individuais com os numeros (ainda em char *)
-    else if (argc == 2) // esta condicao nao e valida para nos porque quando temos flags argc > 2; 
+    else // esta condicao nao e valida para nos porque quando temos flags argc > 2; 
         argv = ft_split(argv[1], ' '); //-> como funciona para argc > 2? loop while (argv[i]) > ft_split?
     // identificar flags (antes da stack init) -- como definimos quando termina a string de numeros? Temos de garantir que o programa funciona para ./push_swap "1 2" e ./push_swap 1 2 ???
     // stack_init com array de char * argv

@@ -6,7 +6,7 @@
 /*   By: marcebar <marcebar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 10:14:45 by marcebar          #+#    #+#             */
-/*   Updated: 2026/04/26 08:54:08 by marcebar         ###   ########.fr       */
+/*   Updated: 2026/05/25 10:51:00 by marcebar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 // 	t_list *tmp;
 // 	n1 = ft_lstnew("2");
 // 	n2 = ft_lstnew("3");
-// 	n3 = ft_lstnew("4");
+// n3 = ft_lstnew("4");
 // 	ft_lstadd_back(&lst, n1);
 // 	ft_lstadd_back(&lst, n2);
 // 	ft_lstadd_back(&lst, n3);
