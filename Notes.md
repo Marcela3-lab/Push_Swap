@@ -13,3 +13,5 @@ verifica se esta ordenado com o disorder_metric
     O(n n) time.
     - High disorder: if *disorder ≥ 0.5*, your chosen method must run in O(n log n)
     time.
+
+comecei a criar a `pb`.
