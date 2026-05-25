@@ -9,18 +9,18 @@
 typedef struct s_node
 {
 	int				value;
-	int				index;
+	int				index; // NOVO
 	struct s_node	*prev;
 	struct s_node	*next;
 }	t_node;
 
 typedef struct s_stack
 {
-	struct s_node	*head;
-	struct s_node	*tail;
-	size_t			size;
+	t_node	*head;
+	t_node	*tail;
+	size_t	size;
 }	t_stack;
 
-//declaracao de funcoes
+float	normalize_index(t_stack *a); //NOVO
 
 #endif
