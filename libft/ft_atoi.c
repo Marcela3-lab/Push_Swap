@@ -6,7 +6,7 @@
 /*   By: marcebar <marcebar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 12:35:36 by marcebar          #+#    #+#             */
-/*   Updated: 2026/05/26 11:28:31 by marcebar         ###   ########.fr       */
+/*   Updated: 2026/05/26 17:10:40 by marcebar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_atoi(const char *str)
 {
-	int	num;
+	long	num;
 	int	sign;
 	int	i;
 
