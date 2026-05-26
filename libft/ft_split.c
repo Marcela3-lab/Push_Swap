@@ -6,7 +6,7 @@
 /*   By: marcebar <marcebar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 16:39:18 by marcebar          #+#    #+#             */
-/*   Updated: 2026/04/29 16:11:20 by marcebar         ###   ########.fr       */
+/*   Updated: 2026/05/26 11:34:04 by marcebar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,22 +84,22 @@ char	**ft_split(char const *s, char c)
 	return (fill_split(res, s, c));
 }
 
-// int main()
-// {
-//     int i = 0;
-//     char *s = "ola bom dia k";
-//     char c = ' ';
-//     char **res;
-//     res = ft_split(s, c);
-//     if (!res)
-//         return 1;
-//     while (res[i] != NULL)
-//     {
-//         printf("%s\n", res[i]);
-//         i++;
-//     }
-// 	while(i--)
-// 		free(res[i]);
-// 	free(res);
-//     return 0;
-// }
+int main()
+{
+    int i = 0;
+    char *s = "ola bom dia k";
+    char c = ' ';
+    char **res;
+    res = ft_split(s, c);
+    if (!res)
+        return 1;
+    while (res[i] != NULL)
+    {
+        printf("%s\n", res[i]);
+        i++;
+    }
+	while(i--)
+		free(res[i]);
+	free(res);
+    return 0;
+}

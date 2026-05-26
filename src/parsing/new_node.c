@@ -1,6 +1,5 @@
 #include "push_swap.h"
 
-
 char	**split_args(char *arg, char c)
 {
 	char	**res;
@@ -26,31 +25,19 @@ int	main(int argc, char **argv)
 		j = 0;
 		while (res[j])
 		{
-			num = ft_atoi(res[j]);
+			num = ft_atoi(argv[i]);
 
 			printf("string = %s\n", res[j]);
 			printf("numero = %d\n", num);
 			j++;
+			if (verificar_erros(res, argc - 1))
+			{
+				printf("erro");
+				
+			}
 		}
 		i++;
 	}
 
-	return (0);
-
-	i = 1;
-	while (i < argc)
-	{
-		printf("ARG: %s\n", argv[i]);
-		res = ft_split(argv[i], ' ');
-		if (!res)
-			return (1);
-		j = 0;
-		while (res[j])
-		{
-			printf("split[%d] = %s\n", j, res[j]);
-			j++;
-		}
-		i++;
-	}
 	return (0);
 }

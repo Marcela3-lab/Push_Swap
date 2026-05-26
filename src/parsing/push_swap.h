@@ -4,6 +4,7 @@
 #include <unistd.h> // para write & read
 #include <stdlib.h> // para malloc & free
 #include <stdio.h> // Print so para testes
+#include <limits.h>
 #include "../../libft/libft.h"
 
 //declaracao de typedefs para linked lists
@@ -23,6 +24,12 @@ typedef struct s_stack
 
 //declaracao de funcoes
 char	**ft_split(char const *s, char c);
-int	ft_atoi(char *str);
+int	ft_atoi(const char *str);
+char	**split_args(char *arg, char c);
+int	ft_isdigit(int c);
+size_t	ft_strlen(const char *s);
+int	num_duplicate(int *arr, int size);
+int	num_valid(char *str);
+int	verificar_erros(char **args, int size);
 
 #endif

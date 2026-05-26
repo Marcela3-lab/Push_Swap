@@ -6,13 +6,13 @@
 /*   By: marcebar <marcebar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 12:35:36 by marcebar          #+#    #+#             */
-/*   Updated: 2026/05/25 17:32:52 by marcebar         ###   ########.fr       */
+/*   Updated: 2026/05/26 11:28:31 by marcebar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	num;
 	int	sign;
