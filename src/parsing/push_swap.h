@@ -30,6 +30,6 @@ int	ft_isdigit(int c);
 size_t	ft_strlen(const char *s);
 int	num_duplicate(int *arr, int size);
 int	num_valid(char *str);
-int	verificar_erros(char **args, int size);
+int	verificar_erros(char *res, int size);
 
 #endif

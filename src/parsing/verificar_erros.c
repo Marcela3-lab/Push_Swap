@@ -41,7 +41,7 @@ int	num_valid(char *str)
 	return (1);
 }
 
-int	verificar_erros(char **args, int size)
+int	verificar_erros(char *res, int size)
 {
 	int		i;
 	
@@ -51,23 +51,26 @@ int	verificar_erros(char **args, int size)
 	i = 0;
 	numbers = malloc(sizeof(int) * size);
 	if (!numbers)
-		return (1);
+		return (0);
 	while (i < size)
 	{
-		if (!num_valid(args[i]))
-			return (1);
+		if (!num_valid(res[i]))
+			printf("O numero nao e valido");
 
-		numero = (long)args[i];
+		numero = (long)res[i];
 
 		if (numero > INT_MAX || numero < INT_MIN)
-			return (1);
+			printf("Overflow");
 
 		numbers[i] = (int)numero;
+		
+		
+		if (num_duplicate(numbers, size))
+			printf("duplicado");
 		i++;
 	}
 
-	if (num_duplicate(numbers, size))
-		return (1);
+	
 
 	return (0);
 }

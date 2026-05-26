@@ -29,12 +29,13 @@ int	main(int argc, char **argv)
 
 			printf("string = %s\n", res[j]);
 			printf("numero = %d\n", num);
-			j++;
-			if (verificar_erros(res, argc - 1))
+			
+			if (verificar_erros(res[j], argc - 1))
 			{
 				printf("erro");
 				
 			}
+			j++;
 		}
 		i++;
 	}
