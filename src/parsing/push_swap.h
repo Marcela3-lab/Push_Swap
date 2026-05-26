@@ -11,6 +11,7 @@
 typedef struct s_node
 {
 	int				value;
+	int				index; 
 	struct s_node	*prev;
 	struct s_node	*next;
 }	t_node;
@@ -31,5 +32,7 @@ size_t	ft_strlen(const char *s);
 int	num_duplicate(int *arr, int size);
 int	num_valid(char *str);
 int verificar_erros(char **args, int size);
+// int		ft_atoi(char *str);
+// float	normalize_index(t_stack *a);
 
 #endif
