@@ -1,5 +1,5 @@
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef PUSH_SWAPFILIPA_H
+# define PUSH_SWAPFILIPA_H
 
 #include <unistd.h> // para write & read
 #include <stdlib.h> // para malloc & free
@@ -22,5 +22,10 @@ typedef struct s_stack
 }	t_stack;
 
 float	normalize_index(t_stack *a);
+void	pop_stack(t_node *node, t_stack *stack); //NOVO
+void	pb(t_stack *a, t_stack *b); //NOVO
+void	stack_addtop(t_node *node, t_stack *stack); //NOVO
+void	pa(t_stack *b, t_stack *a); //NOVO
+
 
 #endif

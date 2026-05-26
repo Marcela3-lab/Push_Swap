@@ -15,3 +15,9 @@ verifica se esta ordenado com o disorder_metric
     time.
 
 comecei a criar a `pb`.
+
+26/mai
+## funcoes em /operations
+operations
+|_`addtostacks_ops` -> operacoes que adicionam nodes to stacks
+    |_`stack_addtop` -> adds node to top of a stack
