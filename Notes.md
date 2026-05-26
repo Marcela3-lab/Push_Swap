@@ -17,7 +17,10 @@ verifica se esta ordenado com o disorder_metric
 comecei a criar a `pb`.
 
 26/mai
-## funcoes em /operations
+## funcoes em /operations 
 operations
 |_`addtostacks_ops` -> operacoes que adicionam nodes to stacks
     |_`stack_addtop` -> adds node to top of a stack
+|_`pushpop_ops` -> operacoes de push e pop
+    |_`pb` e `pa` -> push node to a/b
+    |_`pop_stack `-> takes first node from stack

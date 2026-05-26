@@ -12,7 +12,7 @@ typedef struct s_node
 	int				index;
 	struct s_node	*prev;
 	struct s_node	*next;
-}	t_node;
+}	t_node; 
 
 typedef struct s_stack
 {
