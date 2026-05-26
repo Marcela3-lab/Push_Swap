@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-static t_node *get_min_node(t_node *current)
+t_node *get_min_node(t_node *current)
 {
 	t_node	*minimum;
 		

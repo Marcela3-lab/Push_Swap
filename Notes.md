@@ -24,3 +24,8 @@ operations
 |_`pushpop_ops` -> operacoes de push e pop
     |_`pb` e `pa` -> push node to a/b
     |_`pop_stack `-> takes first node from stack
+|_`rotatestacks_ops` -> operacoes de rotacao da stack
+    |_`ra`, `rb` e `rr` -> rotate a, rotate b e rotate a and b at the same time
+|_`revrotatestacks_ops` -> opercaoes de rotacao invertida da stack
+    |_`rra`, `rrb` e `rrr` -> reverse rotate a, b, a and b at the same time
+o caller destas funcoes (os algoritmos), devem fazer write da respectiva operacao (pb, pa, ra, etc.)
