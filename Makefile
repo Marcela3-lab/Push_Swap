@@ -3,7 +3,7 @@ NAME = push_swap
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = src/parsing/new_node.c
+SRC = src/parsing/new_node.c src/parsing/verificar_erros.c
 OBJ = $(SRC:.c=.o)
 
 LIBFT_DIR = libft

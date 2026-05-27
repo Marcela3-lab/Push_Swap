@@ -1,31 +1,24 @@
 #include "push_swap.h"
 #include <limits.h>
 
-int	num_duplicate(int *arr, int size)
+int	num_duplicate(int *arr, int j)
 {
 	int	i;
-	int	j;
 
-	i = 0;
-	while (i < size)
-	{
-		j = i + 1;
-		while (j < size)
+	i = j - 1;
+	
+		while (i >= 0 )
 		{
 			if (arr[i] == arr[j])
 		{
 			printf("Num duplicado");
 			return (1);
-			
 		}
-				
-			j++;
-		}
-		i++;
+		i--;		
 	}
-	return (0);
+	return 0;
 }
-
+// 
 int	num_valid(char *str)
 {
 	int	i;
@@ -47,51 +40,24 @@ int	num_valid(char *str)
 			
 		i++;
 	}
+	
 	return (1);
 }
 
-int	verificar_erros(char **args, int size)
-{
-	int		i;
-	long	numero;
-	int		*numbers;
 
-	i = 0;
-	numbers = malloc(sizeof(int) * size);
-	if (!numbers)
-		return (0);
-
-	while (i < size)
-	{
-		if (!num_valid(args[i]))
-			return (free(numbers), 0);
-
-		numero = ft_atoi(args[i]);
-
-		if (numero > INT_MAX || numero < INT_MIN)
-			return (free(numbers), 0);
-
-		numbers[i] = (int)numero;
-		i++;
-	}
-
-	if (num_duplicate(numbers, size))
-		return (free(numbers), 0);
-
-	free(numbers);
-	return (1);
-}
 // int	main(int argc, char **argv)
 // {
 // 	int		i;
-// 	int arr[] = {4, 6, 3};
+// 	int res;
+// 	int arr[] = {4, 6, 42};
 
 // 	i = 1;
-// 	while (i < argc)
-// 	{
+// 	// while (i < argc)
+// 	// {
 		
-// 		i++;
-// 	}
-
+// 	// 	i++;
+// 	// }
+// 	res = num_duplicate(arr, 2);
+// 	printf("%d",res);
 // 	return (0);
 // }

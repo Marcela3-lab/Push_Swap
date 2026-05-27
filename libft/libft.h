@@ -6,7 +6,7 @@
 /*   By: marcebar <marcebar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 13:28:02 by marcebar          #+#    #+#             */
-/*   Updated: 2026/04/26 14:23:02 by marcebar         ###   ########.fr       */
+/*   Updated: 2026/05/27 12:06:24 by marcebar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		ft_isdigit(int c);
 int		ft_isprint(int c);
 int		ft_isalpha(int c);
 int		ft_isalnum(int c);
-int		ft_atoi(const char *str);
+long long	ft_atoi(const char *str);
 int		ft_isascii(int c);
 
 size_t	ft_strlen(const char *s);
