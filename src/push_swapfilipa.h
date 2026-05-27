@@ -26,6 +26,9 @@ float	normalize_index(t_stack *a);
 t_node	*get_min_node(t_node *current); //NOVO
 void	pop_stack(t_node *node, t_stack *stack); //NOVO
 void	stack_addtop(t_node *node, t_stack *stack); //NOVO
+t_node	*create_node(int number); // NOVO
+t_stack	*stack_init(int *arraynbr, size_t sizearray); //NOVO
+void	stack_clear(t_stack **stack); //NOVO
 void	pb(t_stack *a, t_stack *b); //NOVO
 void	pa(t_stack *b, t_stack *a); //NOVO
 void	ra(t_stack *a); //NOVO
