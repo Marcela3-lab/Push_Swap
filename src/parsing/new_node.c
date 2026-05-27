@@ -1,42 +1,68 @@
 #include "push_swap.h"
 
-char	**split_args(char *arg, char c)
+int	count_args(char **res)
 {
-	char	**res;
+	int	i;
 
-	res = ft_split(arg, c);
-	return (res);
+	i = 0;
+	while (res[i])
+		i++;
+	return (i);
 }
 
-// int	main(int argc, char **argv)
-// {
-// 	int		i;
-// 	int		j;
-// 	char	**res;
-// 	int		num;
+char	**split_args(char *arg, char c)
+{
+	return (ft_split(arg, c));
+} 
 
-// 	i = 1;
-// 	while (i < argc)
-// 	{
-// 		res = split_args(argv[i], ' ');
+int	main(int argc, char **argv)
+{
+	int		i;
+	int		j;
+	int		size;
+	int		total;
+	char	**res;
+	int index;
 
-// 		if (!res)
-// 			return (1);
-// 		j = 0;
-// 		while (res[j])
-// 		{
-// 			num = ft_atoi(argv[i]);
-// 			printf("numero = %d\n", num);
-			
-// 			if (verificar_erros(&res[j], argc - 1))
-// 			{
-// 				printf("erro");
-				
-// 			}
-// 			j++;
-// 		}
-// 		i++;
-// 	}
+	index = 0;
+	total = 0;
+	i = 1;
+	while (i < argc)
+	{
+		res = split_args(argv[i], ' ');
+		if (!res)
+			return (1);
+		total += count_args(res);
+		i++;
+	}
+	int *numbers;
+	numbers = malloc(sizeof(int) * total);	
+	i = 1;
+	while (i < argc)
+	{
+		res = split_args(argv[i], ' ');
+		if (!res)
+			return (1);
 
-// 	return (0);
-// }
+		size = count_args(res);
+		j = 0;
+
+		while (j < size)
+		{
+			if (!num_valid(res[j]))
+				return (printf("Error\n"), 1);
+			numbers[index++] = ft_atoi(res[j]);
+			j++;
+		}
+		i++;
+	}
+	if (num_duplicate(numbers, total))
+		return (printf("Error\n"), 1);
+	i = 0;
+	while (i < total)
+	{
+		printf("numero = %d\n", numbers[i]);
+		i++;
+	}
+	return (0);
+}

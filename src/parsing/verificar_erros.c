@@ -13,7 +13,12 @@ int	num_duplicate(int *arr, int size)
 		while (j < size)
 		{
 			if (arr[i] == arr[j])
-				return (1);
+		{
+			printf("Num duplicado");
+			return (1);
+			
+		}
+				
 			j++;
 		}
 		i++;
@@ -35,7 +40,11 @@ int	num_valid(char *str)
 	while (str[i])
 	{
 		if (!ft_isdigit(str[i]))
+		{
+			printf("numero nao e digito");
 			return (0);
+		}
+			
 		i++;
 	}
 	return (1);
@@ -72,17 +81,17 @@ int	verificar_erros(char **args, int size)
 	free(numbers);
 	return (1);
 }
-int	main(int argc, char **argv)
-{
-	int		i;
-	int arr[] = {4, 6, 3};
+// int	main(int argc, char **argv)
+// {
+// 	int		i;
+// 	int arr[] = {4, 6, 3};
 
-	i = 1;
-	while (i < argc)
-	{
+// 	i = 1;
+// 	while (i < argc)
+// 	{
 		
-		i++;
-	}
+// 		i++;
+// 	}
 
-	return (0);
-}
+// 	return (0);
+// }
