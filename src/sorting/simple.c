@@ -1,4 +1,15 @@
-#include "push_swapfilipa.h"
+#include "push_swap.h"
+
+t_node	*min_index_node(t_node *current)
+{
+	t_node *minimum;
+
+	minimum = NULL;
+	while (current)
+	{
+
+	}
+}
 
 static void	update_positions(t_stack *stack)
 {
@@ -23,7 +34,7 @@ void	simple(t_stack *a, t_stack *b)
 	while ()
 	{
 		update_positions(a);
-		minimum = get_min_node(a->head); //devo criar outra funcao que procura o min consoante o index? afeta performance?
+		minimum = min_index_node(a->head); //devo criar outra funcao que procura o min consoante o index? afeta performance?
 		if (minimum->position == 0)
 		{
 			pb(a, b);

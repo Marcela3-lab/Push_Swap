@@ -5,14 +5,18 @@ int main (int argc, char **argv)
 {
 	int *res;
 	int i;
+	t_stack	*a;
+	t_stack	*b;
+
 	i = 0;
 	res = splitmain(argc, argv);
 	if (!res)
 		return (1);
-	while(i < argc - 1)
-	{
-		printf("%d",res[i]);
-		i++;
-	}
+	a = stack_init(res, )
+	// while(i < argc - 1)
+	// {
+	// 	printf("%d",res[i]);
+	// 	i++;
+	// }
 	
 }

@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-t_node *get_min_node(t_node *current)
+t_node *min_value_node(t_node *current)
 {
 	t_node	*minimum;
 		
@@ -51,7 +51,7 @@ float	normalize_index(t_stack *a)
 	i = 0;
 	while (i < a->size)
 	{
-		get_min_node(a->head)->index = i;
+		min_value_node(a->head)->index = i;
 		i++;
 	}
 	return(compute_disorder(a));

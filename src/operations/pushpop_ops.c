@@ -1,4 +1,4 @@
-#include "push_swapfilipa.h"
+#include "push_swap.h"
 
 // funcao que retira o node do topo da stack:
 void	pop_stack(t_node *node, t_stack *stack)

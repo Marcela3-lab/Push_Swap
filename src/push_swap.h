@@ -5,7 +5,7 @@
 #include <stdlib.h> // para malloc & free
 #include <stdio.h> // Print so para testes
 #include <limits.h>
-#include "../../libft/libft.h"
+#include "../libft/libft.h"
 
 //declaracao de typedefs para linked lists
 typedef struct s_node
@@ -31,7 +31,19 @@ size_t	ft_strlen(const char *s);
 int	num_duplicate(int *arr, int j);
 int	num_valid(char *str);
 int verificar_erros(char **args, int size);
-// int		ft_atoi(char *str);
-// float	normalize_index(t_stack *a);
+t_node	*get_min_node(t_node *current);
+void	pop_stack(t_node *node, t_stack *stack);
+void	stack_addtop(t_node *node, t_stack *stack);
+t_node	*create_node(int number);
+t_stack	*stack_init(int *arraynbr, size_t sizearray);
+void	stack_clear(t_stack **stack);
+void	pb(t_stack *a, t_stack *b);
+void	pa(t_stack *b, t_stack *a);
+void	ra(t_stack *a);
+void	rb(t_stack *b);
+void	rr(t_stack *a, t_stack *b);
+void	rrb(t_stack *b);
+void	rra(t_stack *a);
+void	rrr(t_stack *a, t_stack *b);
 
 #endif
