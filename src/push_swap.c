@@ -12,7 +12,7 @@ int main (int argc, char **argv)
 	res = splitmain(argc, argv);
 	if (!res)
 		return (1);
-	a = stack_init(res, )
+	a = stack_init(res, );
 	// while(i < argc - 1)
 	// {
 	// 	printf("%d",res[i]);
