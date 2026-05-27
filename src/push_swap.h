@@ -11,7 +11,8 @@
 typedef struct s_node
 {
 	int				value;
-	int				index; 
+	size_t			index;
+	size_t			position; 
 	struct s_node	*prev;
 	struct s_node	*next;
 }	t_node;
