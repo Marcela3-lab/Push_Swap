@@ -1,6 +1,6 @@
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	rra(t_stack *a)
+void	revrotate(t_stack *a)
 {
 	t_node *tail_node;
 
@@ -14,26 +14,23 @@ void	rra(t_stack *a)
 	a->head = tail_node;
 	tail_node->prev = NULL;
 }
+void	rra(t_stack *a)
+{
+	revrotate(a);
+	write(1, "rra\n", 4);
+}
 
 void	rrb(t_stack *b)
 {
-	t_node *tail_node;
-
-	if (!b || b->size <= 1)
-		return ;
-	tail_node = b->tail;
-	b->tail = tail_node->prev;
-	b->tail->next = NULL;
-	b->head->prev = tail_node;
-	tail_node->next = b->head;
-	b->head = tail_node;
-	tail_node->prev = NULL;
+	revrotate(b);
+	write(1, "rrb\n", 4);
 }
 
 void	rrr(t_stack *a, t_stack *b)
 {
-	rra(a);
-	rrb(b);
+	revrotate(a);
+	revrotate(b);
+	write(1, "rrr\n", 4);
 }
 
 /* int main()

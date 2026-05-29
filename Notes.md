@@ -3,7 +3,7 @@ Alterei o nome da main para o nome do nosso programa (push_swap).
 iniciei a estrutura seguindo o video que partilhaste e coloquei varios comentarios com duvidas e notas para continuar a construcao.
 
 25/mai
-### funcao `normalize_index`:
+## funcao `normalize_index`:
 - recebe o stack_a com os inteiros e o index inicializado em _-1_.
 - normaliza atualizando o node->index (com funcao static get_min que identifica o valor minimo)
 verifica se esta ordenado com o disorder_metric
@@ -38,6 +38,43 @@ src
     |_`stack_addtop` -> adds the node to the top of the stack
     |_`create_node` -> created the node with value equal to the given number, initializes index and postion to *-1*, and *next* and *prev* to *NULL*
     |_`stack_init` -> initializes a stack and creates a node for each number in the array. initializes the stack's *head* and *tail* to *NULL*, so that we can create an empty `stack b`.
+
+29/mai
+## Flags
+**A ideia central**
+Em vez de teres as stacks e os flags separados e passares tudo à parte, crias uma struct "mãe" que contém tudo:
+```
+typedef struct s_data
+{
+    t_stack     *stack_a;
+    t_stack     *stack_b;
+    t_flags     *flags;
+}   t_data;
+```
+
+**Porque resolve o problema?**
+Agora as tuas funções de operações, em vez de receberem isto:
+```
+void    pb(t_stack *a, t_stack *b, t_flags *flags);  // 3 params, e ainda falta mais
+```
+Recebem só isto:
+```
+void    pb(t_data *data);  // 1 param, tem acesso a tudo
+```
+E dentro da função acedes assim:
+```
+data->stack_a   // a stack a
+data->stack_b   // a stack b
+data->flags->has_bench  // se bench está ativo
+```
+
+**Tens mesmo de passar sempre — mas só UMA coisa**
+Sim, continuas a passar o `t_data` para todo o lado. A diferença é que em vez de passares 3 ou 4 argumentos separados, passas sempre só 1 ponteiro — e isso nunca viola a norminette.
+
+Finalizei o algoritmo `simple.c` - **Min extraction method**. Falta passar as flags.
+
+## Algoritmo
+Comecei a funcao `sort_upto3nbr.c` para fazer o sorting de quando os numeros sao menores ou igual a 3, pois nao e necessario rodar um algoritmo - seria ineficiente.
 
 ### NAO ESQUECER:
 - norminette

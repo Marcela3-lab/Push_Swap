@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../push_swap.h"
 
 // funcao que retira o node do topo da stack:
 void	pop_stack(t_node *node, t_stack *stack)
@@ -34,7 +34,7 @@ void	pb(t_stack *a, t_stack *b)
 	write(1, "pb\n", 3);
 }
 
-void	pa(t_stack *b, t_stack *a)
+void	pa(t_stack *a, t_stack *b)
 {
 	t_node	*node1;
 

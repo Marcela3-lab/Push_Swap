@@ -39,6 +39,14 @@ typedef struct s_flags
 	int		has_bench;
 }	t_flags;
 
+//struct mae com tudo
+typedef struct s_data
+{
+    t_stack     *stack_a;
+    t_stack     *stack_b;
+    t_flags     *flags;
+}   t_data;
+
 //declaracao de funcoes
 
 char	**split_args(char *arg, char c);
@@ -55,7 +63,7 @@ t_node	*create_node(int number);
 t_stack	*stack_init(int *arraynbr, int sizearray);
 void	stack_clear(t_stack **stack);
 void	pb(t_stack *a, t_stack *b);
-void	pa(t_stack *b, t_stack *a);
+void	pa(t_stack *a, t_stack *b);
 void	ra(t_stack *a);
 void	rb(t_stack *b);
 void	rr(t_stack *a, t_stack *b);
