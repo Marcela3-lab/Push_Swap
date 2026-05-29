@@ -3,7 +3,9 @@ NAME = push_swap
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -Isrc -Ilibft
 
-SRC = src/parsing/array_int.c src/parsing/verificar_erros.c push_swap.c
+SRC = src/parsing/array_int.c src/parsing/verificar_erros.c \
+src/push_swap.c src/initialize_stacks.c src/normalize_index.c
+
 OBJ = $(SRC:.c=.o)
 
 LIBFT_DIR = libft

@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	count_args(char **res)
 {
@@ -18,7 +18,7 @@ char	**split_args(char *arg, char c)
 int	numbers_verifications(char **res, int *numbers, int *index)
 {
 	int			j;
-	int			size;
+	int			size; // index ja e o size, acho que nao precisamos desta variavel
 	long long	num;
 
 	size = count_args(res);
@@ -48,14 +48,14 @@ int	*splitmain(int argc, char **argv, int *size)
 	int		i;
 	char	**res;
 	int		*numbers;
-	int total;
+	int		total;
 
 	total = 0;
 	*size = 0;
 	i = 1;
 	while (i < argc)
 	{
-		res = split_args(argv[i], ' ');
+		res = split_args(argv[i], ' '); // precisa de verficacao de NULL?
 		total += count_args(res);
 		i++;
 	}
@@ -65,10 +65,10 @@ int	*splitmain(int argc, char **argv, int *size)
 		return (NULL);
 	while (i < argc)
 	{
-		res = split_args(argv[i], ' ');
+		res = split_args(argv[i], ' ');  // porque 2x?
 		if (!res || numbers_verifications(res, numbers, size))
 			return (NULL);
 	i++;
 	}
-	return (numbers);
+	return (numbers); //dar free do res antes do return?
 }

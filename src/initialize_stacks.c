@@ -57,13 +57,13 @@ t_node	*create_node(int number)
 
 //inicializa a stack e coloca os numeros do array de ints passado pela main
 //para stack b, inicializar com stack_init(NULL, 0);
-t_stack	*stack_init(int *arraynbr, size_t sizearray)
+t_stack	*stack_init(int *arraynbr, int sizearray)
 {
-	size_t	i;
+	int	i;
 	t_stack	*stack;
 	t_node	*node;
 
-	i = 0;
+	i = sizearray - 1;
 	stack = malloc(sizeof(t_stack));
 	if (!stack)
 		return (NULL);
@@ -72,13 +72,13 @@ t_stack	*stack_init(int *arraynbr, size_t sizearray)
 	stack->size = 0;
 	if (sizearray == 0)
 		return (stack);
-	while(i < sizearray)
+	while(i >= 0)
 	{
 		node = create_node(arraynbr[i]);
 		if (!node)
 			return (stack_clear(&stack), NULL);
 		stack_addtop(node, stack);
-		i++;
+		i--;
 	}
 	return (stack);
 }

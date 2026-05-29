@@ -38,3 +38,9 @@ src
     |_`stack_addtop` -> adds the node to the top of the stack
     |_`create_node` -> created the node with value equal to the given number, initializes index and postion to *-1*, and *next* and *prev* to *NULL*
     |_`stack_init` -> initializes a stack and creates a node for each number in the array. initializes the stack's *head* and *tail* to *NULL*, so that we can create an empty `stack b`.
+
+### NAO ESQUECER:
+- norminette
+- substituir printf por ft_printf se usarmos
+- fazer free cada vez que ha chamadas de funcoes que usam malloc
+- mudar algumas funcoes para static

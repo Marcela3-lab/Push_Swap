@@ -7,20 +7,16 @@ int	main(int argc, char **argv)
 	int		size;
 	t_stack	*a;
 	t_stack	*b;
-	int i;
+	t_flags	*flags;
 
-	i= 0;
-	
 	res = splitmain(argc, argv, &size);
-
 	if (!res)
 		return (1);
-
 	a = stack_init(res, size);
-	while(i < argc - 1)
-		{
-			printf("Numero: %d ",res[i]);
-			i++;
-	}
-	printf(" size = %d\n", size);
+	b = stack_init(NULL, 0);
+	start_program(a, b, flags);
+	//testes
+	printf("stack a:\nHEAD--> value > %d; position > %d: index > %d\n", a->head->value, a->head->position, a->head->index);
+	printf("TAIL --> value > %d; position > %d: index > %d\n", a->tail->value, a->tail->position, a->tail->index);
+	printf("stack a: size = %zu\nstack b: size = %zu\n", a->size, b->size);
 }	

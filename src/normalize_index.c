@@ -45,7 +45,6 @@ static float	compute_disorder(t_stack *a)
 float	normalize_index(t_stack *a)
 {
 	size_t	i;
-	t_node *current;
 
 	//definir o index para cada node
 	i = 0;
