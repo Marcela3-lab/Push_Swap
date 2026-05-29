@@ -29,8 +29,9 @@ int	numbers_verifications(char **res, int *numbers, int *index)
 			return (printf("Error\n"), 1);
 		num = ft_atoi(res[j]);
 		if (num > INT_MAX || num < INT_MIN)
-			return (0);
+			return (printf("Error\n"), 1);
 		numbers[*index] = (int)num;
+
 		if (*index >= 1)
 		{
 			if (num_duplicate(numbers, *index))
@@ -42,24 +43,32 @@ int	numbers_verifications(char **res, int *numbers, int *index)
 	return (0);
 }
 
-int	*splitmain(int argc, char **argv)
+int	*splitmain(int argc, char **argv, int *size)
 {
 	int		i;
-	int		index;
 	char	**res;
 	int		*numbers;
+	int total;
 
-	index = 0;
-	numbers = malloc(sizeof(int) * 1000);
+	total = 0;
+	*size = 0;
 	i = 1;
 	while (i < argc)
 	{
 		res = split_args(argv[i], ' ');
-		if (!res)
-			return (NULL);
-		if (numbers_verifications(res, numbers, &index))
-			return (NULL);
+		total += count_args(res);
 		i++;
+	}
+	numbers = malloc(sizeof(int) * total);
+	i = 1;
+	if (!numbers)
+		return (NULL);
+	while (i < argc)
+	{
+		res = split_args(argv[i], ' ');
+		if (!res || numbers_verifications(res, numbers, size))
+			return (NULL);
+	i++;
 	}
 	return (numbers);
 }

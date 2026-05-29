@@ -83,23 +83,23 @@ t_stack	*stack_init(int *arraynbr, size_t sizearray)
 	return (stack);
 }
 
-int main()
-{
-	t_stack *a;
-	t_node	*node1 = malloc(sizeof(t_node));
+// int main()
+// {
+// 	t_stack *a;
+// 	t_node	*node1 = malloc(sizeof(t_node));
 
-	node1->index = -1;
-	node1->value = 1;
-	node1->next = NULL;
-	node1->prev = NULL;
-	a = stack_init(NULL, 0);
-	printf("%zu\n", a->size);
-	stack_addtop(node1, a);
-	printf("%d %zu\n", a->head->value, a->size);
-	stack_clear(&a);
-	if (!a)
-		printf("a cleared sucessfully\n");
-	// free(a);
-	// free(node1);
-	return (0);
-}
+// 	node1->index = -1;
+// 	node1->value = 1;
+// 	node1->next = NULL;
+// 	node1->prev = NULL;
+// 	a = stack_init(NULL, 0);
+// 	printf("%zu\n", a->size);
+// 	stack_addtop(node1, a);
+// 	printf("%d %zu\n", a->head->value, a->size);
+// 	stack_clear(&a);
+// 	if (!a)
+// 		printf("a cleared sucessfully\n");
+// 	// free(a);
+// 	// free(node1);
+// 	return (0);
+// }

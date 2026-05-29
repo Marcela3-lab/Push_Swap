@@ -27,6 +27,7 @@ typedef struct s_stack
 //declaracao de funcoes
 
 char	**split_args(char *arg, char c);
+int	*splitmain(int argc, char **argv, int *size);
 int	ft_isdigit(int c);
 size_t	ft_strlen(const char *s);
 int	num_duplicate(int *arr, int j);
