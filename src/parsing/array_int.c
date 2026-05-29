@@ -15,6 +15,28 @@ char	**split_args(char *arg, char c)
 	return (ft_split(arg, c));
 } 
 
+int verificar_flags(char **argv)
+{
+	int i;
+
+	i = 1;
+	while (argv[i])
+	{
+		if (strcmp(argv[i], SIMPLE) == 0)
+			//preenche a variavel
+		if (strcmp(argv[i], MEDIUM) == 0)
+			//preenche a variavel
+		if (strcmp(argv[i], COMPLEX) == 0)
+			//preenche a variavel
+		if (strcmp(argv[i], ADAPTIVE) == 0)
+			//preenche a variavel
+		if (strcmp(argv[i], BENCH) == 0)
+			//preenche a variavel
+		i++;
+	}
+	return (0);
+}
+
 int	numbers_verifications(char **res, int *numbers, int *index)
 {
 	int			j;

@@ -7,6 +7,13 @@
 #include <limits.h>
 #include "../libft/libft.h"
 
+// MACROS
+#define SIMPLE "--simple"
+#define MEDIUM "--medium"
+#define COMPLEX "--complex"
+#define ADAPTIVE "--adaptive"
+#define BENCH "--bench"
+
 //declaracao de typedefs para linked lists
 typedef struct s_node
 {
