@@ -14,27 +14,56 @@ char	**split_args(char *arg, char c)
 {
 	return (ft_split(arg, c));
 } 
+int	ft_strcmp(const char *s1, const char *s2)
+{
+	int	i;
 
-int verificar_flags(char **argv)
+	i = 0;
+	while (s1[i] && s2[i] && s1[i] == s2[i])
+		i++;
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+}
+
+t_flags verificar_flags(int argc, char **argv)
 {
 	int i;
+	t_flags flags;
 
 	i = 1;
-	while (argv[i])
+	flags.has_flags = 0;
+	flags.has_bench = 0;
+	flags.strategy = 0;
+
+	while (i < argc)
 	{
-		if (strcmp(argv[i], SIMPLE) == 0)
-			//preenche a variavel
-		if (strcmp(argv[i], MEDIUM) == 0)
-			//preenche a variavel
-		if (strcmp(argv[i], COMPLEX) == 0)
-			//preenche a variavel
-		if (strcmp(argv[i], ADAPTIVE) == 0)
-			//preenche a variavel
-		if (strcmp(argv[i], BENCH) == 0)
-			//preenche a variavel
+		if (ft_strcmp(argv[i], "--simple") == 0)
+		{
+			flags.strategy = start_simple;
+			flags.has_flags = 1;
+		}
+		else if (ft_strcmp(argv[i], "--medium") == 0)
+		{
+			flags.strategy = start_medium;
+			flags.has_flags = 1;
+		}
+		else if (ft_strcmp(argv[i], "--complex") == 0)
+		{
+			flags.strategy = start_complex;
+			flags.has_flags = 1;
+		}
+		else if (ft_strcmp(argv[i], "--adaptive") == 0)
+		{
+			flags.strategy = start_adaptive;
+			flags.has_flags = 1;
+		}
+		else if (ft_strcmp(argv[i], "--bench") == 0)
+		{
+			flags.has_bench = 1;
+			flags.has_flags = 1;
+		}
 		i++;
 	}
-	return (0);
+	return (flags);
 }
 
 int	numbers_verifications(char **res, int *numbers, int *index)
@@ -88,6 +117,8 @@ int	*splitmain(int argc, char **argv, int *size)
 	while (i < argc)
 	{
 		res = split_args(argv[i], ' ');  // porque 2x?
+		if (argv[i][0] == '-' && argv[i][1] == '-')
+			i++;
 		if (!res || numbers_verifications(res, numbers, size))
 			return (NULL);
 	i++;

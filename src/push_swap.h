@@ -7,12 +7,6 @@
 #include <limits.h>
 #include "../libft/libft.h"
 
-// MACROS
-#define SIMPLE "--simple"
-#define MEDIUM "--medium"
-#define COMPLEX "--complex"
-#define ADAPTIVE "--adaptive"
-#define BENCH "--bench"
 
 //declaracao de typedefs para linked lists
 typedef struct s_node
@@ -34,10 +28,26 @@ typedef struct s_stack
 typedef struct s_flags
 {
 	int		has_flags;
-	float	disorder;
 	int		strategy;
 	int		has_bench;
 }	t_flags;
+
+typedef enum s_strategy
+{
+	start_default,
+	start_simple,
+	start_medium,
+	start_complex,
+	start_adaptive
+}t_strategy;
+
+// typedef struct s_flags
+// {
+// 	int		has_flags;
+// 	float	disorder;
+// 	int		strategy;
+// 	int		has_bench;
+// }	t_flags;
 
 //struct mae com tudo
 typedef struct s_data
@@ -56,6 +66,8 @@ size_t	ft_strlen(const char *s);
 int		num_duplicate(int *arr, int j);
 int		num_valid(char *str);
 int 	verificar_erros(char **args, int size);
+t_flags verificar_flags(int argc, char **argv);
+int	ft_strcmp(const char *s1, const char *s2);
 t_node	*get_min_node(t_node *current);
 void	pop_stack(t_node *node, t_stack *stack);
 void	stack_addtop(t_node *node, t_stack *stack);
