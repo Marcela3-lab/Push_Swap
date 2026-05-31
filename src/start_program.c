@@ -4,10 +4,20 @@ void    start_program(t_data *data)
 {
 	float	disorder;
 
-	disorder = normalize_index(data->stack_a);
-	if (disorder == 0)
+	if (data->stack_a->size <= 3)
+	{
+		sort_small(data->stack_a);
 		return ;
-	// has flags? If no, check disorder and call algorithm
+	}
+	normalize_index(data->stack_a);
+	disorder = compute_disorder(data->stack_a);
+	data->bench.disorder = disorder;
+	if (disorder == 0)
+		return ; // se disorder for 0 e tiver flag bench, imprime alguma coisa??
+	// has flags? If no, call algorithm according to disorder value
 				//if yes, check flag call algorithm
-	//has bench? If yes -> print data in fd = 2 (stderr)
+	if (data->flags.has_bench == 1)
+	{
+		// print data in fd = 2 (stderr)
+	}
 }

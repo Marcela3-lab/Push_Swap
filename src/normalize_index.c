@@ -21,7 +21,7 @@ t_node *min_value_node(t_node *current)
 	return (minimum);
 }
 
-static float	compute_disorder(t_stack *a)
+float	compute_disorder(t_stack *a)
 {
 	t_node	*current_i;
 	t_node	*current_j;
@@ -42,7 +42,7 @@ static float	compute_disorder(t_stack *a)
 	return (mistakes / total_pairs);
 }	
 
-float	normalize_index(t_stack *a)
+void	normalize_index(t_stack *a)
 {
 	size_t	i;
 
@@ -53,7 +53,7 @@ float	normalize_index(t_stack *a)
 		min_value_node(a->head)->index = i;
 		i++;
 	}
-	return(compute_disorder(a));
+	return ;
 }
 /* int main ()
 {

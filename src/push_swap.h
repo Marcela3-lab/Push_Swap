@@ -78,13 +78,16 @@ int		num_duplicate(int *arr, int j);
 int		num_valid(char *str);
 int 	verificar_erros(char **args, int size);
 t_flags verificar_flags(int argc, char **argv);
-int	ft_strcmp(const char *s1, const char *s2);
+int		ft_strcmp(const char *s1, const char *s2);
 t_node	*get_min_node(t_node *current);
 void	pop_stack(t_node *node, t_stack *stack);
 void	stack_addtop(t_node *node, t_stack *stack);
 t_node	*create_node(int number);
 t_stack	*stack_init(int *arraynbr, int sizearray);
 void	stack_clear(t_stack **stack);
+void    start_program(t_data *data);
+
+//operations
 void	pb(t_data *data);
 void	pa(t_data *data);
 void	ra(t_data *data);
@@ -96,6 +99,8 @@ void	rrr(t_data *data);
 void	sa(t_data *data);
 void	sb(t_data *data);
 void	ss(t_data *data);
-void    start_program(t_data *data);
+
+//algorithms
+void	simple(t_data *data);
 
 # endif

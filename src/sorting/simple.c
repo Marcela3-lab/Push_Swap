@@ -31,32 +31,32 @@ void	update_positions(t_stack *stack)
 	}
 }
 
-//Simple Algorithm: Simple Min extraction
-void	simple(t_stack *a, t_stack *b)
+//Simple Algorithm: Simple Min extraction O(n2)
+void	simple(t_data *data)
 {
 	t_node	*min;
 
-	while (a->size != 0)
+	while (data->stack_a->size != 0)
 	{
-		update_positions(a);
-		min = min_index_node(a->head);
+		update_positions(data->stack_a);
+		min = min_index_node(data->stack_a->head);
 		if (min->position == 0)
-			pb(a, b);
+			pb(&data);
 		else
 		{
 			while(min->position != 0)
 			{
-				update_positions(a);
-				if (min->position <= (int)a->size / 2 && min->position != 0)	
-					ra(a);
-				else if (min->position >= (int)a->size / 2 && min->position != 0)
-					rra(a);
+				update_positions(data->stack_a);
+				if (min->position <= (int)data->stack_a->size / 2 && min->position != 0)	
+					ra(data->stack_a);
+				else if (min->position >= (int)data->stack_a->size / 2 && min->position != 0)
+					rra(data->stack_a);
 			}
-			pb(a, b);
+			pb(&data);
 		}
 	}
-	while (b->size != 0)
-		pa(a, b);
+	while (data->stack_b->size != 0)
+		pa(&data);
 }
 //TESTES MAIN
 /*int main()

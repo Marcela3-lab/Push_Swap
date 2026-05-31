@@ -76,6 +76,12 @@ Finalizei o algoritmo `simple.c` - **Min extraction method**. Falta passar as fl
 ## Algoritmo
 Comecei a funcao `sort_upto3nbr.c` para fazer o sorting de quando os numeros sao menores ou igual a 3, pois nao e necessario rodar um algoritmo - seria ineficiente.
 
+#31/mai
+atualizei todas as operacoes e start program com o novo struct t_data.
+comecei a desenvolver o sort 3 numbers (que nao precisa de chamar disorder nem algoritmos).
+Encontrei um erro nas funcoes de operacoes (nao estao a atulizar o tail)
+TO DO: rever funcoes de operacoes para validar que os nos e stacks sao atualizados (next, prev, head e tail).
+
 ### NAO ESQUECER:
 - norminette
 - substituir printf por ft_printf se usarmos
