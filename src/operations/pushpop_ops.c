@@ -20,32 +20,36 @@ void	pop_stack(t_node *node, t_stack *stack)
 	node->next = NULL;
 }
 
-void	pb(t_stack *a, t_stack *b)
+void	pb(t_data *data)
 {
 	t_node	*node1;
 
 	node1 = NULL;
-	if (!a || !b)
+	if (!data->stack_a || !data->stack_b)
 		return ;
 	else
-		node1 = a->head;
-	pop_stack(node1, a);
-	stack_addtop(node1, b);
+		node1 = data->stack_a->head;
+	pop_stack(node1, data->stack_a);
+	stack_addtop(node1, data->stack_b);
 	write(1, "pb\n", 3);
+	if (data->flags.has_bench == 1)
+		data->bench.pb += 1;
 }
 
-void	pa(t_stack *a, t_stack *b)
+void	pa(t_data *data)
 {
 	t_node	*node1;
 
 	node1 = NULL;
-	if (!a || !b)
+	if (!data->stack_a || !data->stack_b)
 		return ;
 	else
-		node1 = b->head;
-	pop_stack(node1, b);
-	stack_addtop(node1, a);
+		node1 = data->stack_b->head;
+	pop_stack(node1, data->stack_b);
+	stack_addtop(node1, data->stack_a);
 	write(1, "pa\n", 3);
+	if (data->flags.has_bench == 1)
+		data->bench.pa += 1;
 }
 /* int main()
 {

@@ -1,36 +1,42 @@
 #include "../push_swap.h"
 
-static void	rotate(t_stack *a)
+static void	rotate(t_stack *stack)
 {
 	t_node *top_node;
 
-	if (!a || a->size <= 1)
+	if (!stack || stack->size <= 1)
 		return ;
-	top_node = a->head;
-	a->head = top_node->next;
-	a->head->prev = NULL;
-	a->tail->next = top_node;
-	top_node->prev = a->tail;
-	a->tail = top_node;
+	top_node = stack->head;
+	stack->head = top_node->next;
+	stack->head->prev = NULL;
+	stack->tail->next = top_node;
+	top_node->prev = stack->tail;
+	stack->tail = top_node;
 	top_node->next = NULL;
 }
-void	ra(t_stack *a)
+void	ra(t_data *data)
 {
-	rotate(a);
+	rotate(data->stack_a);
 	write(1, "ra\n", 3);
+	if (data->flags.has_bench == 1)
+		data->bench.ra += 1;
 }
 
-void	rb(t_stack *b)
+void	rb(t_data *data)
 {
-	rotate(b);
+	rotate(data->stack_b);
 	write(1, "rb\n", 3);
+	if (data->flags.has_bench == 1)
+		data->bench.rb += 1;
 }
 
-void	rr(t_stack *a, t_stack *b)
+void	rr(t_data *data)
 {
-	rotate(a);
-	rotate(b);
+	rotate(data->stack_a);
+	rotate(data->stack_b);
 	write(1, "rr\n", 3);
+	if (data->flags.has_bench == 1)
+		data->bench.rr += 1;
 }
 /* int main()
 {

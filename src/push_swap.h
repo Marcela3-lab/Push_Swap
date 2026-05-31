@@ -41,20 +41,31 @@ typedef enum s_strategy
 	start_adaptive
 }t_strategy;
 
-// typedef struct s_flags
-// {
-// 	int		has_flags;
-// 	float	disorder;
-// 	int		strategy;
-// 	int		has_bench;
-// }	t_flags;
+typedef struct s_bench
+{
+    int		pa;
+    int		pb;
+    int		sa;
+    int		sb;
+    int		ss;
+    int		ra;
+    int		rb;
+    int		rr;
+    int		rra;
+    int		rrb;
+    int		rrr;
+	float	disorder;
+	char 	*strategy;
+}   t_bench;
+
 
 //struct mae com tudo
 typedef struct s_data
 {
     t_stack     *stack_a;
     t_stack     *stack_b;
-    t_flags     *flags;
+    t_flags     flags;
+	t_bench		bench;
 }   t_data;
 
 //declaracao de funcoes
@@ -74,13 +85,17 @@ void	stack_addtop(t_node *node, t_stack *stack);
 t_node	*create_node(int number);
 t_stack	*stack_init(int *arraynbr, int sizearray);
 void	stack_clear(t_stack **stack);
-void	pb(t_stack *a, t_stack *b);
-void	pa(t_stack *a, t_stack *b);
-void	ra(t_stack *a);
-void	rb(t_stack *b);
-void	rr(t_stack *a, t_stack *b);
-void	rrb(t_stack *b);
-void	rra(t_stack *a);
-void	rrr(t_stack *a, t_stack *b);
+void	pb(t_data *data);
+void	pa(t_data *data);
+void	ra(t_data *data);
+void	rb(t_data *data);
+void	rr(t_data *data);
+void	rrb(t_data *data);
+void	rra(t_data *data);
+void	rrr(t_data *data);
+void	sa(t_data *data);
+void	sb(t_data *data);
+void	ss(t_data *data);
+void    start_program(t_data *data);
 
 # endif

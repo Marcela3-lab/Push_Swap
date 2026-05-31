@@ -1,36 +1,42 @@
 #include "../push_swap.h"
 
-void	revrotate(t_stack *a)
+void	revrotate(t_stack *stack)
 {
 	t_node *tail_node;
 
-	if (!a || a->size <= 1)
+	if (!stack || stack->size <= 1)
 		return ;
-	tail_node = a->tail;
-	a->tail = tail_node->prev;
-	a->tail->next = NULL;
-	a->head->prev = tail_node;
-	tail_node->next = a->head;
-	a->head = tail_node;
+	tail_node = stack->tail;
+	stack->tail = tail_node->prev;
+	stack->tail->next = NULL;
+	stack->head->prev = tail_node;
+	tail_node->next = stack->head;
+	stack->head = tail_node;
 	tail_node->prev = NULL;
 }
-void	rra(t_stack *a)
+void	rra(t_data *data)
 {
-	revrotate(a);
+	revrotate(data->stack_a);
 	write(1, "rra\n", 4);
+	if (data->flags.has_bench == 1)
+		data->bench.rra += 1;
 }
 
-void	rrb(t_stack *b)
+void	rrb(t_data *data)
 {
-	revrotate(b);
+	revrotate(data->stack_b);
 	write(1, "rrb\n", 4);
+	if (data->flags.has_bench == 1)
+		data->bench.rrb += 1;
 }
 
-void	rrr(t_stack *a, t_stack *b)
+void	rrr(t_data *data)
 {
-	revrotate(a);
-	revrotate(b);
+	revrotate(data->stack_a);
+	revrotate(data->stack_b);
 	write(1, "rrr\n", 4);
+	if (data->flags.has_bench == 1)
+		data->bench.rrr += 1;
 }
 
 /* int main()

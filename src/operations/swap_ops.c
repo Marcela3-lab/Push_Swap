@@ -1,14 +1,14 @@
 #include "../push_swap.h"
 
 //validar funcao
-static void swap(t_stack    *a)
+static void swap(t_stack    *stack)
 {
 	t_node	*node1;
 	t_node	*node2;
 
-	if (!a || a->size < 2)
+	if (!stack || stack->size < 2)
 		return ;
-	node1 = a->head;
+	node1 = stack->head;
 	node2 = node1->next;
 	node1->next = node2->next;
     if (node2->next)
@@ -16,26 +16,31 @@ static void swap(t_stack    *a)
 	node2->prev = NULL;
 	node2->next = node1;
 	node1->prev = node2;
-	a->head = node2;
-	write(1, "sa\n", 3);
+	stack->head = node2;
 }
-void	sa(t_stack	*a)
+void	sa(t_data *data)
 {
-	swap(a);
+	swap(data->stack_a);
     write(1, "sa\n", 3);
+	if (data->flags.has_bench == 1)
+		data->bench.sa += 1;
 }
 
-void	sb(t_stack	*b)
+void	sb(t_data	*data)
 {
-	swap(b);
+	swap(data->stack_b);
     write(1, "sb\n", 3);
+	if (data->flags.has_bench == 1)
+		data->bench.sb += 1;
 }
 
-void	ss(t_stack *a, t_stack *b)
+void	ss(t_data *data)
 {
-	swap(a);
-	swap(b);
+	swap(data->stack_a);
+	swap(data->stack_b);
     write(1, "ss\n", 3);
+	if (data->flags.has_bench == 1)
+		data->bench.ss += 1;
 }
 //TESTES MAIN
 /*int main()

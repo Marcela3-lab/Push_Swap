@@ -59,7 +59,6 @@ t_flags verificar_flags(int argc, char **argv)
 		else if (ft_strcmp(argv[i], "--bench") == 0)
 		{
 			flags.has_bench = 1;
-			flags.has_flags = 1;
 		}
 		i++;
 	}
