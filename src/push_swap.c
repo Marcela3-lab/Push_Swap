@@ -1,4 +1,4 @@
-#include "push_swap.h"
+/* #include "push_swap.h"
 
 
 int	main(int argc, char **argv)
@@ -31,4 +31,4 @@ int	main(int argc, char **argv)
 	// printf("stack a:\nHEAD--> value > %d; position > %d: index > %d\n", a->head->value, a->head->position, a->head->index);
 	// printf("TAIL --> value > %d; position > %d: index > %d\n", a->tail->value, a->tail->position, a->tail->index);
 	// printf("stack a: size = %zu\nstack b: size = %zu\n", a->size, b->size);
-}	
+} */	

@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../push_swap.h"
 
 //funcao que faz clear das double lists (stack e nodes)
 void	stack_clear(t_stack **stack)
