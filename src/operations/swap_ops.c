@@ -1,7 +1,6 @@
 #include "../push_swap.h"
 
-//validar funcao
-static void swap(t_stack    *stack)
+static void swap(t_stack *stack)
 {
 	t_node	*node1;
 	t_node	*node2;
@@ -12,11 +11,13 @@ static void swap(t_stack    *stack)
 	node2 = node1->next;
 	node1->next = node2->next;
     if (node2->next)
-        node2->next->prev = node1;
+		node2->next->prev = node1;
 	node2->prev = NULL;
 	node2->next = node1;
 	node1->prev = node2;
 	stack->head = node2;
+	if (stack->size == 2)
+		stack->tail = node1;
 }
 void	sa(t_data *data)
 {

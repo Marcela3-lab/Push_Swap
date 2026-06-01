@@ -9,13 +9,13 @@ static void  sort_three_v2(t_data *data)
 
     if (node2->value > node2->next->value)
     {
-        rra(data);
+        ra(data);
         sa(data);
     }
     else
     {
         if (node1->value > node2->next->value)
-            rra(data);
+            ra(data);
         else
             sa(data);
     }
@@ -34,11 +34,11 @@ static void  sort_three(t_data *data)
             return ;
         if (node1->value < node2->next->value)
         {
-            ra(data);
+            rra(data);
             sa(data);
         }
         else   
-            ra(data);
+            rra(data);
     }
     else
         sort_three_v2(data);
@@ -60,9 +60,7 @@ void    sort_small(t_data *data)
     if (data->stack_a->size == 3)
         sort_three(data);
 }
-//31-mai: testes para 2 numeros ok, da erro na atualizacao do stack->head
-//depois de corrigir, testar para 3 numeros (todas as 6 combinacoes possiveis)
-int main ()
+/* int main ()
 {
     t_data data;
     
@@ -72,11 +70,12 @@ int main ()
 	t_node *node3 = malloc(sizeof(t_node));
     
     ft_bzero(&data, sizeof(t_data));
+    data.flags.has_bench = 1;
 
     //nodes value
     node1->value = 0;
-    node2->value = 2;
-    node3->value = 1;
+    node2->value = 1;
+    node3->value = 2;
 
     //nodes structure
     node1->prev = NULL;
@@ -98,13 +97,19 @@ int main ()
     printf("a tail= %d\n", data.stack_a->tail->value);
 
     sort_small(&data);
-    printf("AFTER\n");
+    printf("\nAFTER\n");
     printf("a head= %d\n", data.stack_a->head->value);
     printf("a tail= %d\n", data.stack_a->tail->value);
 
+    // so para size==3:
+    // printf("\n%d -> %d -> %d\n", data.stack_a->head->value, data.stack_a->head->next->value, data.stack_a->head->next->next->value);
+    
+    //teste de soma de operacoes no bench
+    printf("sa: %d | ra: %d | rra: %d\n", data.bench.sa, data.bench.ra, data.bench.rra);
+    
     //free
     free(data.stack_a);
     free(node1);
     free(node2);
     free(node3);
-}
+} */
