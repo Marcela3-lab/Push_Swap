@@ -12,7 +12,7 @@ static void swap(t_stack    *stack)
 	node2 = node1->next;
 	node1->next = node2->next;
     if (node2->next)
-        node2->next->prev = node1;
+		node2->next->prev = node1;
 	node2->prev = NULL;
 	node2->next = node1;
 	node1->prev = node2;

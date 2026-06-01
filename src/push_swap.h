@@ -86,6 +86,9 @@ t_node	*create_node(int number);
 t_stack	*stack_init(int *arraynbr, int sizearray);
 void	stack_clear(t_stack **stack);
 void    start_program(t_data *data);
+void    sort_small(t_data *data);
+void	normalize_index(t_stack *a);
+float	compute_disorder(t_stack *a);
 
 //operations
 void	pb(t_data *data);

@@ -62,49 +62,49 @@ void    sort_small(t_data *data)
 }
 //31-mai: testes para 2 numeros ok, da erro na atualizacao do stack->head
 //depois de corrigir, testar para 3 numeros (todas as 6 combinacoes possiveis)
-int main ()
-{
-    t_data data;
+// int main ()
+// {
+//     t_data data;
     
-    //nodes
-    t_node *node1 = malloc(sizeof(t_node));
-	t_node *node2 = malloc(sizeof(t_node));
-	t_node *node3 = malloc(sizeof(t_node));
+//     //nodes
+//     t_node *node1 = malloc(sizeof(t_node));
+// 	t_node *node2 = malloc(sizeof(t_node));
+// 	t_node *node3 = malloc(sizeof(t_node));
     
-    ft_bzero(&data, sizeof(t_data));
+//     ft_bzero(&data, sizeof(t_data));
 
-    //nodes value
-    node1->value = 0;
-    node2->value = 2;
-    node3->value = 1;
+//     //nodes value
+//     node1->value = 0;
+//     node2->value = 2;
+//     node3->value = 1;
 
-    //nodes structure
-    node1->prev = NULL;
-    node1->next = node2;
-    node2->prev = node1;
-    node2->next = node3;
-    node3->prev = node2;
-    node3->next = NULL;
+//     //nodes structure
+//     node1->prev = NULL;
+//     node1->next = node2;
+//     node2->prev = node1;
+//     node2->next = node3;
+//     node3->prev = node2;
+//     node3->next = NULL;
 
-    //init stack a
-    data.stack_a = malloc(sizeof(t_stack));
-    data.stack_a->head = node1;
-    data.stack_a->tail = node3;
-    data.stack_a->size = 3;
+//     //init stack a
+//     data.stack_a = malloc(sizeof(t_stack));
+//     data.stack_a->head = node1;
+//     data.stack_a->tail = node3;
+//     data.stack_a->size = 3;
 
-    printf("a size= %zu\n", data.stack_a->size);
-    printf("BEFORE\n");
-    printf("a head= %d\n", data.stack_a->head->value);
-    printf("a tail= %d\n", data.stack_a->tail->value);
+//     printf("a size= %zu\n", data.stack_a->size);
+//     printf("BEFORE\n");
+//     printf("a head= %d\n", data.stack_a->head->value);
+//     printf("a tail= %d\n", data.stack_a->tail->value);
 
-    sort_small(&data);
-    printf("AFTER\n");
-    printf("a head= %d\n", data.stack_a->head->value);
-    printf("a tail= %d\n", data.stack_a->tail->value);
+//     sort_small(&data);
+//     printf("AFTER\n");
+//     printf("a head= %d\n", data.stack_a->head->value);
+//     printf("a tail= %d\n", data.stack_a->tail->value);
 
-    //free
-    free(data.stack_a);
-    free(node1);
-    free(node2);
-    free(node3);
-}
+//     //free
+//     free(data.stack_a);
+//     free(node1);
+//     free(node2);
+//     free(node3);
+// }

@@ -6,7 +6,7 @@ void    start_program(t_data *data)
 
 	if (data->stack_a->size <= 3)
 	{
-		sort_small(data->stack_a);
+		sort_small(data);
 		return ;
 	}
 	normalize_index(data->stack_a);

@@ -17,6 +17,7 @@ void	pop_stack(t_node *node, t_stack *stack)
 		stack->size = 0;
 		stack->tail = NULL;
 	}
+
 	node->next = NULL;
 }
 

@@ -1,31 +1,29 @@
 NAME = push_swap
 
 CC = gcc
+
 CFLAGS = -Wall -Wextra -Werror -Isrc -Ilibft
 
-SRC = src/parsing/array_int.c src/parsing/verificar_erros.c \
-src/push_swap.c src/initialize_stacks.c src/normalize_index.c
+SRCS = $(shell find src -name "*.c")
 
-OBJ = $(SRC:.c=.o)
+OBJS = $(SRCS:.c=.o)
 
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
-INCLUDES = -I include -I $(LIBFT_DIR)
-
 all: $(NAME)
 
-$(NAME): $(OBJ) $(LIBFT)
-	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
+$(NAME): $(OBJS) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
 $(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR)
 
 %.o: %.c
-	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJS)
 	$(MAKE) -C $(LIBFT_DIR) clean
 
 fclean: clean
@@ -33,3 +31,5 @@ fclean: clean
 	$(MAKE) -C $(LIBFT_DIR) fclean
 
 re: fclean all
+
+.PHONY: all clean fclean re

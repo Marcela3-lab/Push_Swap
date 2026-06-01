@@ -12,7 +12,7 @@ int	main(int argc, char **argv)
 	//printf("%d ",res[0]);
 	if (!res)
 		return (1);
-	//printf(" %d ",size);
+	printf(" %d ",size);
 	ft_bzero(&data, sizeof(t_data));
 	data.flags = verificar_flags(argc,argv);
 	data.stack_a = stack_init(res, size);
