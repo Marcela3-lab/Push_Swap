@@ -105,5 +105,6 @@ void	ss(t_data *data);
 
 //algorithms
 void	simple(t_data *data);
+void	complex(t_data *data);
 
 # endif
