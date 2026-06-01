@@ -95,32 +95,51 @@ int	numbers_verifications(char **res, int *numbers, int *index)
 
 int	*splitmain(int argc, char **argv, int *size)
 {
-	int		i;
-	char	**res;
-	int		*numbers;
-	int		total;
+	int			i;
+	char		**res;
+	int			*numbers;
+	int			index;
 
-	total = 0;
-	*size = 0;
 	i = 1;
+	*size = 0;
+	index = 0;
+	
 	while (i < argc)
 	{
-		res = split_args(argv[i], ' '); // precisa de verficacao de NULL?
-		total += count_args(res);
+		if (ft_strcmp(argv[i], "--simple") == 0
+			|| ft_strcmp(argv[i], "--medium") == 0
+			|| ft_strcmp(argv[i], "--complex") == 0
+			|| ft_strcmp(argv[i], "--adaptive") == 0
+			|| ft_strcmp(argv[i], "--bench") == 0)
+		{
+			i++;
+			continue;
+		}
+		*size += count_args(split_args(argv[i], ' '));
 		i++;
 	}
-	numbers = malloc(sizeof(int) * total);
+
+	numbers = malloc(sizeof(int) * (*size));
 	i = 1;
 	if (!numbers)
 		return (NULL);
+
 	while (i < argc)
 	{
-		res = split_args(argv[i], ' ');  // porque 2x?
-		if (argv[i][0] == '-' && argv[i][1] == '-')
+		if (ft_strcmp(argv[i], "--simple") == 0
+			|| ft_strcmp(argv[i], "--medium") == 0
+			|| ft_strcmp(argv[i], "--complex") == 0
+			|| ft_strcmp(argv[i], "--adaptive") == 0
+			|| ft_strcmp(argv[i], "--bench") == 0)
+		{
 			i++;
-		if (!res || numbers_verifications(res, numbers, size))
+			continue;
+		}
+		res = split_args(argv[i], ' ');
+		if (!res || numbers_verifications(res, numbers, &index))
 			return (NULL);
-	i++;
+		// free_split(res);
+		i++;
 	}
-	return (numbers); //dar free do res antes do return?
+	return (numbers);
 }

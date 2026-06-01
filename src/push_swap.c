@@ -19,7 +19,14 @@ int	main(int argc, char **argv)
 	data.stack_b = stack_init(NULL, 0);
 	start_program(&data);
 	
+	printf("flags.has_flags = %d\n", data.flags.has_flags);
+	printf("flags.has_bench = %d\n", data.flags.has_bench);
+	printf("flags.strategy = %d\n", data.flags.strategy);
 	
+	printf("stack_a head value = %d\n", data.stack_a->head->value);
+	printf("stack_a head index = %d\n", data.stack_a->head->index);
+	printf("stack_a size = %zu\n", data.stack_a->size);
+
 	//testes
 	// printf("stack a:\nHEAD--> value > %d; position > %d: index > %d\n", a->head->value, a->head->position, a->head->index);
 	// printf("TAIL --> value > %d; position > %d: index > %d\n", a->tail->value, a->tail->position, a->tail->index);
