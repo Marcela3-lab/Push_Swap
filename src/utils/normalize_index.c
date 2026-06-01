@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../push_swap.h"
 
 t_node *min_value_node(t_node *current)
 {
