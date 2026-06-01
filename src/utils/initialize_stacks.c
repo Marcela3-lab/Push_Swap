@@ -39,7 +39,7 @@ void	stack_addtop(t_node *node, t_stack *stack)
 	}
 }
 
-//inicializa no com inteiro
+//inicializa node com inteiro
 t_node	*create_node(int number)
 {
 	t_node *new_node;

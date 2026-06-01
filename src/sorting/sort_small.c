@@ -42,6 +42,7 @@ static void  sort_three(t_data *data)
     }
     else
         sort_three_v2(data);
+    return ;
 }
 
 void    sort_small(t_data *data)
@@ -59,6 +60,8 @@ void    sort_small(t_data *data)
     }
     if (data->stack_a->size == 3)
         sort_three(data);
+    data->bench.complexity = o1;
+    return ;
 }
 /* int main ()
 {

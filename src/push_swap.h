@@ -34,12 +34,19 @@ typedef struct s_flags
 
 typedef enum s_strategy
 {
-	start_default,
 	start_simple,
 	start_medium,
 	start_complex,
 	start_adaptive
 }t_strategy;
+
+typedef enum s_complexity
+{
+	o1,
+	on2,
+	onn,
+	onlogn,
+}t_complexity;
 
 typedef struct s_bench
 {
@@ -55,7 +62,7 @@ typedef struct s_bench
     int		rrb;
     int		rrr;
 	float	disorder;
-	char 	*strategy;
+	int 	complexity;
 }   t_bench;
 
 
@@ -86,7 +93,6 @@ t_node	*create_node(int number);
 t_stack	*stack_init(int *arraynbr, int sizearray);
 void	stack_clear(t_stack **stack);
 void    start_program(t_data *data);
-void    sort_small(t_data *data);
 void	normalize_index(t_stack *a);
 float	compute_disorder(t_stack *a);
 
@@ -106,5 +112,6 @@ void	ss(t_data *data);
 //algorithms
 void	simple(t_data *data);
 void	complex(t_data *data);
+void    sort_small(t_data *data);
 
 # endif

@@ -1,5 +1,19 @@
 #include "push_swap.h"
 
+void	run_adaptive(t_data *data)
+{
+	float	d;
+
+	d = data->bench.disorder;
+	if (d > 0 && d < 0.2)
+		simple(data);
+	else if (d >= 0.2 && d < 0.5)
+		medium (data);
+	else if (d >= 0.5)
+		complex (data);
+	return ;
+}
+
 void    start_program(t_data *data)
 {
 	float	disorder;
@@ -13,11 +27,17 @@ void    start_program(t_data *data)
 	disorder = compute_disorder(data->stack_a);
 	data->bench.disorder = disorder;
 	if (disorder == 0)
-		return ; // se disorder for 0 e tiver flag bench, imprime alguma coisa??
-	// has flags? If no, call algorithm according to disorder value
-				//if yes, check flag call algorithm
-	if (data->flags.has_bench == 1)
+		return ;
+	if (data->flags.has_flags == 1 && data->flags.strategy != start_adaptive)
 	{
-		// print data in fd = 2 (stderr)
+		if (data->flags.strategy == start_simple)
+			simple(data);
+		else if (data->flags.strategy == start_medium)
+			medium(data);
+		else if (data->flags.strategy == start_complex)
+			complex(data);
 	}
+	else
+		run_adaptive(&data);
+	return ;
 }

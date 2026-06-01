@@ -32,7 +32,7 @@ t_flags verificar_flags(int argc, char **argv)
 	i = 1;
 	flags.has_flags = 0;
 	flags.has_bench = 0;
-	flags.strategy = 0;
+	flags.strategy = start_adaptive;
 
 	while (i < argc)
 	{
@@ -68,7 +68,7 @@ t_flags verificar_flags(int argc, char **argv)
 int	numbers_verifications(char **res, int *numbers, int *index)
 {
 	int			j;
-	int			size; // index ja e o size, acho que nao precisamos desta variavel
+	int			size;
 	long long	num;
 
 	size = count_args(res);

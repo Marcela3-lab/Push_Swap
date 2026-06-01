@@ -57,6 +57,8 @@ void	simple(t_data *data)
 	}
 	while (data->stack_b->size != 0)
 		pa(data);
+	data->bench.complexity = on2;
+	return ;
 }
 //TESTES MAIN
 /* int main()
