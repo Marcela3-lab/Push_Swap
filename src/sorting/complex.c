@@ -39,7 +39,6 @@ void	complex(t_data *data)
 			pa(data);
 		i++;
 	}
-
 }
 
 
