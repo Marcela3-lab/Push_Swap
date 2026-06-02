@@ -24,11 +24,12 @@ void	print_bench(t_data *data)
 
 int	main(int argc, char **argv)
 {
+	printf("[LOAD] funcao main push_swap carregado\n");
 	int		*res;
 	int		size;
 	t_data	data;
 
-	res = splitmain(argc, argv, &size);
+	res = splitfirst(argc, argv, &size);
 	if (!res)
 		return (1);
 	ft_bzero(&data, sizeof(t_data));
@@ -41,4 +42,5 @@ int	main(int argc, char **argv)
 	free(data.stack_a);
 	free(data.stack_b);
 	return (0);
-}	
+}	 
+

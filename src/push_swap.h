@@ -33,7 +33,7 @@ typedef struct s_flags
 	int		has_bench;
 }	t_flags;
 
-typedef enum s_strategy
+typedef enum e_strategy
 {
 	start_simple,
 	start_medium,
@@ -41,7 +41,7 @@ typedef enum s_strategy
 	start_adaptive
 }t_strategy;
 
-typedef enum s_complexity
+typedef enum e_complexity
 {
 	o1,
 	on2,
@@ -79,7 +79,7 @@ typedef struct s_data
 //declaracao de funcoes
 
 char	**split_args(char *arg, char c);
-int		*splitmain(int argc, char **argv, int *size);
+int		*splitfirst(int argc, char **argv, int *size);
 int		ft_isdigit(int c);
 size_t	ft_strlen(const char *s);
 int		num_duplicate(int *arr, int j);
@@ -97,6 +97,7 @@ void    start_program(t_data *data);
 void	normalize_index(t_stack *a);
 float	compute_disorder(t_stack *a);
 void	update_positions(t_stack *stack);
+void	print_bench(t_data *data); // tornar static?
 
 //operations
 void	pb(t_data *data);

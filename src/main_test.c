@@ -1,7 +1,5 @@
 #include "push_swap.h"
 
-
-//teste count_bits(size - 1);
 int main()
 {
     t_data	data;
@@ -10,11 +8,9 @@ int main()
 	t_node *node3 = malloc(sizeof(t_node));
 	t_node *node4 = malloc(sizeof(t_node));
 
-	printf(">>> INICIO DA MAIN\n");
 	ft_bzero(&data, sizeof(t_data));
     data.flags.has_bench = 1;
-	printf("[debug]defined has bench = 1\n")
-    data.flags.strategy = 0;
+    data.flags.strategy = start_simple;
     data.flags.has_flags = 1;
 
 
@@ -23,10 +19,10 @@ int main()
     data.stack_b = malloc(sizeof(t_stack));
 
 	//value
-	node1->value = 9;
-	node2->value = 1;
-	node3->value = 2;	
-	node4->value = 10;
+	node1->value = 1;
+	node2->value = 0;
+	node3->value = 3;	
+	node4->value = 2;
 
 	//index
 	node1->index = -1;
@@ -75,6 +71,8 @@ int main()
     printf("complexity: %d\n", data.bench.complexity);
     printf("strategy: %d\n", data.flags.strategy);
 
+	//teste print_bench
+	print_bench(&data);
 	
 
 	//free

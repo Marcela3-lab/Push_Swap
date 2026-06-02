@@ -16,6 +16,7 @@ void	run_adaptive(t_data *data)
 
 void    start_program(t_data *data)
 {
+	printf("starting start_program\n"); //remover
 	float	disorder;
 
 	if (data->stack_a->size <= 3)
@@ -24,11 +25,12 @@ void    start_program(t_data *data)
 		sort_small(data);
 		return ;
 	}
-	printf("before normalize\n"); //remover
 	normalize_index(data->stack_a);
 	printf("normalized index\n"); //remover
 	disorder = compute_disorder(data->stack_a);
 	printf("calculated disorder d = %.2f\n", disorder); // remover
+	disorder = disorder * 100;
+	printf("calculated disorder d = %.2f%%\n", disorder); //remover
 	data->bench.disorder = disorder;
 	if (disorder == 0)
 		return ;
@@ -42,9 +44,16 @@ void    start_program(t_data *data)
 		else if (data->flags.strategy == start_medium)
 			medium(data);
 		else if (data->flags.strategy == start_complex)
+		{
+			printf("running complex\n"); //remover
 			complex(data);
+		}
 	}
 	else
+	{
+		printf("running adaptive\n"); //remover
 		run_adaptive(data);
+	}
+	printf("ending start_program\n"); //remover
 	return ;
 }

@@ -87,3 +87,4 @@ TO DO: rever funcoes de operacoes para validar que os nos e stacks sao atualizad
 - substituir printf por ft_printf se usarmos
 - fazer free cada vez que ha chamadas de funcoes que usam malloc
 - mudar algumas funcoes para static
+- mudar nomes de ficheiros e funcoes para ingles - separar palavras por _
