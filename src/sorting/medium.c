@@ -40,7 +40,7 @@ void	push_chunks_to_b(t_data *data, int chunk_size)
 	}
 }
 
-void	update_positions(t_stack *stack)
+/* void	update_positions(t_stack *stack)
 {
 	size_t	i;
 	t_node	*node;
@@ -54,7 +54,7 @@ void	update_positions(t_stack *stack)
 		node = node->next;
 		i++;
 	}
-}
+} */
 
 void	push_back_to_a(t_data *data)
 {
@@ -89,7 +89,7 @@ void	medium(t_data *data)
 	push_back_to_a(data);
 }
 
-int main ()
+/* int main ()
 {
     
-}
+} */

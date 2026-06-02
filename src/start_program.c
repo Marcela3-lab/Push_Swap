@@ -20,24 +20,31 @@ void    start_program(t_data *data)
 
 	if (data->stack_a->size <= 3)
 	{
+		printf("running sortsmall\n"); //remover
 		sort_small(data);
 		return ;
 	}
+	printf("before normalize\n"); //remover
 	normalize_index(data->stack_a);
+	printf("normalized index\n"); //remover
 	disorder = compute_disorder(data->stack_a);
+	printf("calculated disorder d = %.2f\n", disorder); // remover
 	data->bench.disorder = disorder;
 	if (disorder == 0)
 		return ;
 	if (data->flags.has_flags == 1 && data->flags.strategy != start_adaptive)
 	{
 		if (data->flags.strategy == start_simple)
+		{
+			printf("running simple\n"); //remover
 			simple(data);
+		}
 		else if (data->flags.strategy == start_medium)
 			medium(data);
 		else if (data->flags.strategy == start_complex)
 			complex(data);
 	}
 	else
-		run_adaptive(&data);
+		run_adaptive(data);
 	return ;
 }

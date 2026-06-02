@@ -96,6 +96,7 @@ void	stack_clear(t_stack **stack);
 void    start_program(t_data *data);
 void	normalize_index(t_stack *a);
 float	compute_disorder(t_stack *a);
+void	update_positions(t_stack *stack);
 
 //operations
 void	pb(t_data *data);
@@ -114,5 +115,6 @@ void	ss(t_data *data);
 void	simple(t_data *data);
 void	complex(t_data *data);
 void    sort_small(t_data *data);
+void    medium(t_data *data);
 
 # endif

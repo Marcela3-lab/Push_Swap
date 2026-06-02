@@ -4,7 +4,7 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror -Isrc -Ilibft
 
-SRCS = $(shell find src -name "*.c")
+SRCS = $(shell find src -name "*.c" ! -name "main_test.c")
 
 OBJS = $(SRCS:.c=.o)
 
@@ -21,6 +21,11 @@ $(LIBFT):
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
+	
+OBJS_NO_MAIN = $(filter-out src/push_swap.o, $(OBJS))
+
+test: src/main_test.c $(OBJS_NO_MAIN) $(LIBFT)
+	$(CC) $(CFLAGS) src/main_test.c $(OBJS_NO_MAIN) $(LIBFT) -o test
 
 clean:
 	rm -f $(OBJS)

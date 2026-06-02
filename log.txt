@@ -1,0 +1,28 @@
+ra
+pb
+pb
+ra
+pb
+pb
+pa
+pa
+pa
+pa
+BEFORE:
+a head: 9
+a tail: 10
+size a: 4
+size b: 0
+before normalize
+normalized index
+calculated disorder d = 0.33
+running simple
+AFTER
+a head: 1
+a tail: 10
+size a: 4
+size b: 0
+sa: 0 | ra: 2 | rra: 0
+pb: 4 | pa: 4
+complexity: 1
+strategy: 0
