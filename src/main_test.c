@@ -10,9 +10,11 @@ int main()
 
 	ft_bzero(&data, sizeof(t_data));
     data.flags.has_bench = 1;
+    data.flags.strategy = start_complex;
 	printf("[debug]defined has bench = 1\n");
     data.flags.strategy = 1;
     data.flags.has_flags = 1;
+    data.bench.disorder = 0.3333;
 
 
 	//init stacks
@@ -58,19 +60,19 @@ int main()
 
 
 	//PRINTF
-    printf("BEFORE:\n");
-	// printf("%d->%d->%d->%d\n", node1->value, node2->value, node3->value, node4->value);
-	printf("a head: %d\na tail: %d\n", data.stack_a->head->value, data.stack_a->tail->value);
-	printf("size a: %zu\nsize b: %zu\n", data.stack_a->size, data.stack_b->size);
-	start_program(&data);
-    printf("AFTER\na head: %d\na tail: %d\n", data.stack_a->head->value, data.stack_a->tail->value);
-	printf("size a: %zu\nsize b: %zu\n", data.stack_a->size, data.stack_b->size);
+    // printf("BEFORE:\n");
+	// // printf("%d->%d->%d->%d\n", node1->value, node2->value, node3->value, node4->value);
+	// printf("a head: %d\na tail: %d\n", data.stack_a->head->value, data.stack_a->tail->value);
+	// printf("size a: %zu\nsize b: %zu\n", data.stack_a->size, data.stack_b->size);
+	// start_program(&data);
+    // printf("AFTER\na head: %d\na tail: %d\n", data.stack_a->head->value, data.stack_a->tail->value);
+	// printf("size a: %zu\nsize b: %zu\n", data.stack_a->size, data.stack_b->size);
     
-    //teste de soma de operacoes no bench
-    printf("sa: %d | ra: %d | rra: %d\n", data.bench.sa, data.bench.ra, data.bench.rra);
-    printf("pb: %d | pa: %d\n", data.bench.pa, data.bench.pb);
-    printf("complexity: %d\n", data.bench.complexity);
-    printf("strategy: %d\n", data.flags.strategy);
+    // //teste de soma de operacoes no bench
+    // printf("sa: %d | ra: %d | rra: %d\n", data.bench.sa, data.bench.ra, data.bench.rra);
+    // printf("pb: %d | pa: %d\n", data.bench.pa, data.bench.pb);
+    // printf("complexity: %d\n", data.bench.complexity);
+    // printf("strategy: %d\n", data.flags.strategy);
 
 	//teste print_bench
 	print_bench(&data);
