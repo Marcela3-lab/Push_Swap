@@ -33,7 +33,7 @@ typedef struct s_flags
 	int		has_bench;
 }	t_flags;
 
-typedef enum s_strategy
+typedef enum e_strategy
 {
 	start_simple,
 	start_medium,
@@ -41,7 +41,7 @@ typedef enum s_strategy
 	start_adaptive
 }t_strategy;
 
-typedef enum s_complexity
+typedef enum e_complexity
 {
 	o1,
 	on2,
@@ -97,10 +97,7 @@ void    start_program(t_data *data);
 void	normalize_index(t_stack *a);
 float	compute_disorder(t_stack *a);
 void	update_positions(t_stack *stack);
-void	medium(t_data *data);
-void	push_back_to_a(t_data *data);
-void	push_chunks_to_b(t_data *data, int chunk_size);
-t_node	*max_index_node(t_node *current);
+void	print_bench(t_data *data); // tornar static?
 
 //operations
 void	pb(t_data *data);

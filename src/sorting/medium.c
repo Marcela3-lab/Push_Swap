@@ -75,12 +75,20 @@ void	push_back_to_a(t_data *data)
 		pa(data);
 	}
 }
+int	ft_sqrt(int n)
+{
+	int	i;
 
+	i = 0;
+	while ((i + 1) * (i + 1) <= n)
+		i++;
+	return (i);
+}
 void	medium(t_data *data)
 {
 	int	chunk_size;
 
-	chunk_size = (int)sqrt(data->stack_a->size);
+	chunk_size = (int)ft_sqrt(data->stack_a->size);
 
 	push_chunks_to_b(data, chunk_size);
 	push_back_to_a(data);

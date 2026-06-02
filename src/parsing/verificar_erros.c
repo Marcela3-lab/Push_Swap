@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../push_swap.h"
 #include <limits.h>
 
 int	num_duplicate(int *arr, int j)

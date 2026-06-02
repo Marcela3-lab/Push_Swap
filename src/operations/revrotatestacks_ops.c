@@ -24,6 +24,7 @@ void	rra(t_data *data)
 
 void	rrb(t_data *data)
 {
+	
 	revrotate(data->stack_b);
 	write(1, "rrb\n", 4);
 	if (data->flags.has_bench == 1)
