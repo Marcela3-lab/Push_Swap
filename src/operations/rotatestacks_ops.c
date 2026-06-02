@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotatestacks_ops.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marcebar <marcebar@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/02 17:24:53 by marcebar          #+#    #+#             */
+/*   Updated: 2026/06/02 17:25:38 by marcebar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
 static void	rotate(t_stack *stack)
 {
-	t_node *top_node;
+	t_node	*top_node;
 
 	if (!stack || stack->size <= 1)
 		return ;
@@ -14,6 +26,7 @@ static void	rotate(t_stack *stack)
 	stack->tail = top_node;
 	top_node->next = NULL;
 }
+
 void	ra(t_data *data)
 {
 	rotate(data->stack_a);

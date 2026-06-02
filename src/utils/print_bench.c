@@ -1,6 +1,6 @@
 #include "../push_swap.h"
 
-static void print_disorder(float    d);
+static void print_disorder(float    d)
 {
     int			decimals;
     

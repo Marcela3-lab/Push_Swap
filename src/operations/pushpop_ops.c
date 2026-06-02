@@ -1,6 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pushpop_ops.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marcebar <marcebar@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/02 17:20:17 by marcebar          #+#    #+#             */
+/*   Updated: 2026/06/02 17:20:21 by marcebar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
-// funcao que retira o node do topo da stack:
 void	pop_stack(t_node *node, t_stack *stack)
 {
 	if (!stack)
@@ -17,7 +28,6 @@ void	pop_stack(t_node *node, t_stack *stack)
 		stack->size = 0;
 		stack->tail = NULL;
 	}
-
 	node->next = NULL;
 }
 

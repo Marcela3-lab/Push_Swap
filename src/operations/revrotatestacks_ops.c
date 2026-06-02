@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   revrotatestacks_ops.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marcebar <marcebar@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/02 17:21:36 by marcebar          #+#    #+#             */
+/*   Updated: 2026/06/02 17:23:55 by marcebar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
 void	revrotate(t_stack *stack)
 {
-	t_node *tail_node;
+	t_node	*tail_node;
 
 	if (!stack || stack->size <= 1)
 		return ;
@@ -14,6 +26,7 @@ void	revrotate(t_stack *stack)
 	stack->head = tail_node;
 	tail_node->prev = NULL;
 }
+
 void	rra(t_data *data)
 {
 	revrotate(data->stack_a);
@@ -24,7 +37,6 @@ void	rra(t_data *data)
 
 void	rrb(t_data *data)
 {
-	
 	revrotate(data->stack_b);
 	write(1, "rrb\n", 4);
 	if (data->flags.has_bench == 1)

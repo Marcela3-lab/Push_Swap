@@ -5,7 +5,6 @@
 #include <stdlib.h> // para malloc & free
 #include <stdio.h> // Printf so para testes
 #include <limits.h>
-#include <math.h>
 #include "../libft/libft.h"
 
 
