@@ -6,31 +6,38 @@ void	run_adaptive(t_data *data)
 
 	d = data->bench.disorder;
 	if (d > 0 && d < 0.2)
+	{
+		write(1, "i", 2);
 		simple(data);
+	}
 	else if (d >= 0.2 && d < 0.5)
-		medium (data);
+	{
+		write(1, "j", 2);
+		complex(data);
+	}
 	else if (d >= 0.5)
+	{
+		write(1, "k", 2);
 		complex (data);
+	}
 	return ;
 }
 
 void    start_program(t_data *data)
 {
-	printf("starting start_program\n"); //remover
+	write(1, "a", 2);
 	float	disorder;
 
 	if (data->stack_a->size <= 3)
 	{
-		printf("running sortsmall\n"); //remover
+		write(1, "b", 2);
 		sort_small(data);
 		return ;
 	}
 	normalize_index(data->stack_a);
-	printf("normalized index\n"); //remover
+	write(1, "c", 2);
 	disorder = compute_disorder(data->stack_a);
-	printf("calculated disorder d = %.2f\n", disorder); // remover
-	disorder = disorder * 100;
-	printf("calculated disorder d = %.2f%%\n", disorder); //remover
+	write(1, "d", 2);
 	data->bench.disorder = disorder;
 	if (disorder == 0)
 		return ;
@@ -38,22 +45,24 @@ void    start_program(t_data *data)
 	{
 		if (data->flags.strategy == start_simple)
 		{
-			printf("running simple\n"); //remover
+			write(1, "e", 2);
 			simple(data);
 		}
 		else if (data->flags.strategy == start_medium)
+		{
+			write(1, "f", 2);
 			medium(data);
+		}
 		else if (data->flags.strategy == start_complex)
 		{
-			printf("running complex\n"); //remover
+			write(1, "g", 2);
 			complex(data);
 		}
 	}
 	else
 	{
-		printf("running adaptive\n"); //remover
+		write(1, "h", 2);
 		run_adaptive(data);
 	}
-	printf("ending start_program\n"); //remover
 	return ;
 }
