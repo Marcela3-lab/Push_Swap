@@ -11,6 +11,8 @@ int main()
 	ft_bzero(&data, sizeof(t_data));
     data.flags.has_bench = 1;
     data.flags.strategy = start_complex;
+	printf("[debug]defined has bench = 1\n");
+    data.flags.strategy = 1;
     data.flags.has_flags = 1;
     data.bench.disorder = 0.3333;
 
