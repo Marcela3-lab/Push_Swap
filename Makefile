@@ -6,7 +6,7 @@ CFLAGS = -Wall -Wextra -Werror -Isrc -Ilibft
 
 SRCS = $(shell find src -name "*.c" ! -name "main_test.c")
 
-OBJS = $(SRCS:.c=.o)
+OBJS = $(SRCS:.c=.o) -lm
 
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
@@ -14,7 +14,7 @@ LIBFT = $(LIBFT_DIR)/libft.a
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT)
-	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME) 
 
 $(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR)

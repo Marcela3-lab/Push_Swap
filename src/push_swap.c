@@ -28,7 +28,7 @@ int	main(int argc, char **argv)
 	int		size;
 	t_data	data;
 
-	res = splitmain(argc, argv, &size);
+	res = splitfirst(argc, argv, &size);
 	if (!res)
 		return (1);
 	ft_bzero(&data, sizeof(t_data));

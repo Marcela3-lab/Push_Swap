@@ -93,7 +93,7 @@ int	numbers_verifications(char **res, int *numbers, int *index)
 	return (0);
 }
 
-int	*splitmain(int argc, char **argv, int *size)
+int	*splitfirst(int argc, char **argv, int *size)
 {
 	int			i;
 	char		**res;

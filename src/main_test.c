@@ -13,8 +13,8 @@ int main()
 	printf(">>> INICIO DA MAIN\n");
 	ft_bzero(&data, sizeof(t_data));
     data.flags.has_bench = 1;
-	printf("[debug]defined has bench = 1\n")
-    data.flags.strategy = 0;
+	printf("[debug]defined has bench = 1\n");
+    data.flags.strategy = 1;
     data.flags.has_flags = 1;
 
 

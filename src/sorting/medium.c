@@ -21,11 +21,13 @@ void	push_chunks_to_b(t_data *data, int chunk_size)
 {
 	int	start;
 	int	end;
+	int j;
 
+	j = data->stack_a->size;
 	start = 0;
 	end = chunk_size - 1;
 
-	while (data->stack_a->size > 0)
+	while (j > 0)
 	{
 		if (data->stack_a->head->index >= start
 			&& data->stack_a->head->index <= end)
@@ -37,24 +39,9 @@ void	push_chunks_to_b(t_data *data, int chunk_size)
 		}
 		else
 			ra(data);
+		j--;
 	}
 }
-
-/* void	update_positions(t_stack *stack)
-{
-	size_t	i;
-	t_node	*node;
-
-	i = 0;
-	node = stack->head;
-
-	while (i < stack->size)
-	{
-		node->position = i;
-		node = node->next;
-		i++;
-	}
-} */
 
 void	push_back_to_a(t_data *data)
 {
@@ -75,6 +62,16 @@ void	push_back_to_a(t_data *data)
 			else
 				rrb(data);
 		}
+	
+	// t_node *min = malloc(sizeof(t_node));
+	// min = min_index_node(a->head);
+	// printf("%d:%d", min->value, min->position);
+
+	// update_positions(a);
+	// printf("%d->%d->%d->%d\n", node1->position, node2->position, node3->position, node4->position);
+	
+
+	//free
 		pa(data);
 	}
 }
@@ -83,13 +80,14 @@ void	medium(t_data *data)
 {
 	int	chunk_size;
 
-	chunk_size = 5;
+	chunk_size = (int)sqrt(data->stack_a->size);
 
 	push_chunks_to_b(data, chunk_size);
 	push_back_to_a(data);
 }
 
-/* int main ()
-{
-    
-} */
+//TESTES MAIN
+// int main()
+// {
+ 	
+// }

@@ -40,7 +40,11 @@ void    start_program(t_data *data)
 			simple(data);
 		}
 		else if (data->flags.strategy == start_medium)
+		{
 			medium(data);
+			printf("running medium\n"); //remover
+		}
+			
 		else if (data->flags.strategy == start_complex)
 			complex(data);
 	}

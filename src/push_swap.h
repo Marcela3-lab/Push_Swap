@@ -79,7 +79,7 @@ typedef struct s_data
 //declaracao de funcoes
 
 char	**split_args(char *arg, char c);
-int		*splitmain(int argc, char **argv, int *size);
+int		*splitfirst(int argc, char **argv, int *size);
 int		ft_isdigit(int c);
 size_t	ft_strlen(const char *s);
 int		num_duplicate(int *arr, int j);
@@ -97,6 +97,10 @@ void    start_program(t_data *data);
 void	normalize_index(t_stack *a);
 float	compute_disorder(t_stack *a);
 void	update_positions(t_stack *stack);
+void	medium(t_data *data);
+void	push_back_to_a(t_data *data);
+void	push_chunks_to_b(t_data *data, int chunk_size);
+t_node	*max_index_node(t_node *current);
 
 //operations
 void	pb(t_data *data);
