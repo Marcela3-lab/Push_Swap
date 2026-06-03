@@ -48,7 +48,7 @@ int	*splitfirst(int argc, char **argv, int *size)
 		*size += count_args(split_args(argv[i], ' '));
 		i++;
 	}
-	numbers = malloc(sizeof(int) * (*size));
+	numbers = malloc(sizeof(int) * (*size)); //malloc
 	i = 1;
 	if (!numbers)
 		return (NULL);
@@ -63,7 +63,7 @@ int	*splitfirst(int argc, char **argv, int *size)
 			i++;
 			continue;
 		}
-		res = split_args(argv[i], ' ');
+		res = split_args(argv[i], ' '); // malloc
 		if (!res || numbers_verifications(res, numbers, &index))
 			return (NULL);
 		// free_split(res);

@@ -92,6 +92,7 @@ void	medium(t_data *data)
 
 	push_chunks_to_b(data, chunk_size);
 	push_back_to_a(data);
+	data->bench.complexity = onn;
 }
 
 //TESTES MAIN

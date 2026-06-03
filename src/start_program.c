@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void	run_adaptive(t_data *data)
+static void	run_adaptive(t_data *data)
 {
 	float	d;
 
@@ -18,7 +18,7 @@ void    start_program(t_data *data)
 {
 	float	disorder;
 
-	if (data->stack_a->size <= 3)
+	if (!(data->flags.has_flags) && data->stack_a->size <= 3)
 	{
 		sort_small(data);
 		return ;
