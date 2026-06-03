@@ -1,6 +1,5 @@
 #include "../push_swap.h"
 
-//funcao que faz clear das double lists (stack e nodes)
 void	stack_clear(t_stack **stack)
 {
 	t_node	*node;
@@ -19,7 +18,6 @@ void	stack_clear(t_stack **stack)
 	*stack = NULL;
 }
 
-// funcao que coloca o node no topo da stack:
 void	stack_addtop(t_node *node, t_stack *stack)
 {
 	if (!node || !stack)
@@ -39,7 +37,6 @@ void	stack_addtop(t_node *node, t_stack *stack)
 	}
 }
 
-//inicializa node com inteiro
 t_node	*create_node(int number)
 {
 	t_node *new_node;
@@ -55,8 +52,6 @@ t_node	*create_node(int number)
 	return (new_node);
 }
 
-//inicializa a stack e coloca os numeros do array de ints passado pela main
-//para stack b, inicializar com stack_init(NULL, 0);
 t_stack	*stack_init(int *arraynbr, int sizearray)
 {
 	int	i;
@@ -83,23 +78,3 @@ t_stack	*stack_init(int *arraynbr, int sizearray)
 	return (stack);
 }
 
-// int main()
-// {
-// 	t_stack *a;
-// 	t_node	*node1 = malloc(sizeof(t_node));
-
-// 	node1->index = -1;
-// 	node1->value = 1;
-// 	node1->next = NULL;
-// 	node1->prev = NULL;
-// 	a = stack_init(NULL, 0);
-// 	printf("%zu\n", a->size);
-// 	stack_addtop(node1, a);
-// 	printf("%d %zu\n", a->head->value, a->size);
-// 	stack_clear(&a);
-// 	if (!a)
-// 		printf("a cleared sucessfully\n");
-// 	// free(a);
-// 	// free(node1);
-// 	return (0);
-// }

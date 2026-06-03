@@ -1,7 +1,8 @@
 #include "../push_swap.h"
 
-void ft_error(void)
+void	free_split(char **res)
 {
+<<<<<<< HEAD
     write(2,"Error\n",6);
     return;
 }
@@ -9,6 +10,8 @@ void ft_error(void)
 
 void	free_split(char **res)
 {
+=======
+>>>>>>> c551ae3afcccf1241aa39bbe1ac762f3ab862bd7
 	int	i;
 
 	i = 0;
