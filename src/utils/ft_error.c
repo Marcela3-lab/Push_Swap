@@ -1,6 +1,6 @@
 #include "../push_swap.h"
 
-static void	free_split(char **res)
+void	free_split(char **res)
 {
 	int	i;
 
