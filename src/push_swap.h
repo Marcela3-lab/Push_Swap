@@ -114,7 +114,7 @@ char	**split_args(char *arg, char c);
 void	free_spl(char **split);
 =======
 void	print_bench(t_data *data);
-void	ft_error(void);
+void    free_and_exit(char **res, int *numbers);
 
 >>>>>>> db9e6fb0705fa681df65b26b98c895dd530823d3
 //operations

@@ -8,11 +8,12 @@ int	main(int argc, char **argv)
 
 	res = splitfirst(argc, argv, &size);
 	if (!res)
-		return (1); // print Error aqui?
+		free_and_exit(NULL, NULL);
 	ft_bzero(&data, sizeof(t_data));
-	data.flags = verificar_flags(argc,argv);
+	data.flags = verificar_flags(argc, argv);
 	data.stack_a = stack_init(res, size);
 	data.stack_b = stack_init(NULL, 0);
+	free(res);
 	start_program(&data);
 	if (data.flags.has_bench == 1)
 		print_bench(&data);

@@ -38,12 +38,8 @@ int	*return_numbers(char **argv, int argc, int *size)
 			i++;
 		}
 	}
-<<<<<<< HEAD
 	numbers = malloc(sizeof(int) * (*size));
-=======
-	numbers = malloc(sizeof(int) * (*size)); //malloc
 	i = 1;
->>>>>>> db9e6fb0705fa681df65b26b98c895dd530823d3
 	if (!numbers)
 		return (NULL);
 	return (numbers);
@@ -71,13 +67,9 @@ int	*splitfirst(int argc, char **argv, int *size)
 			}
 			free_spl(res);
 		}
-<<<<<<< HEAD
-=======
-		res = split_args(argv[i], ' '); // malloc
+		res = split_args(argv[i], ' '); // free do numbrs se res nao funcionar free and exit
 		if (!res || numbers_verifications(res, numbers, &index))
 			return (NULL);
-		// free_split(res);
->>>>>>> db9e6fb0705fa681df65b26b98c895dd530823d3
 		i++;
 	}
 	return (numbers);

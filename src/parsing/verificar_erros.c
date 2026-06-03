@@ -84,12 +84,12 @@ int	numbers_verifications(char **res, int *numbers, int *index)
 	{
 		num = ft_atoi(res[j]);
 		if (num > INT_MAX || num < INT_MIN)
-			ft_error();
+			return (1);
 		numbers[*index] = (int)num;
 		if (*index >= 1)
 		{
 			if (num_duplicate(numbers, *index))
-				ft_error();
+				return(1);
 		}
 		(*index)++;
 		j++;
