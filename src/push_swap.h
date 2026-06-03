@@ -79,11 +79,8 @@ typedef struct s_data
 
 int		*splitfirst(int argc, char **argv, int *size);
 int		count_args(char **res);
-<<<<<<< HEAD
-=======
 int		ft_isdigit(int c);
 size_t	ft_strlen(const char *s);
->>>>>>> c551ae3afcccf1241aa39bbe1ac762f3ab862bd7
 int		num_valid(char *str);
 int 	verificar_erros(char **args, int size);
 int		jump_flags(char *argv);
@@ -100,16 +97,6 @@ void    start_program(t_data *data);
 void	normalize_index(t_stack *a);
 float	compute_disorder(t_stack *a);
 void	update_positions(t_stack *stack);
-<<<<<<< HEAD
-void	print_bench(t_data *data); // tornar static?
-void ft_error (void);
-int	count_args(char **res);
-int	numbers_verifications(char **res, int *numbers, int *index);
-int	ft_strcmp(const char *s1, const char *s2);
-char	**split_args(char *arg, char c);
-void	free_spl(char **split);
-void    free_and_exit(char **res, int *numbers);
-=======
 void	print_bench(t_data *data);
 void	ft_error (void);
 int		count_args(char **res);
@@ -121,7 +108,6 @@ void	free_split(char **res); // apagar uma
 void	print_bench(t_data *data);
 void    free_and_exit(char **res, int *numbers);
 
->>>>>>> c551ae3afcccf1241aa39bbe1ac762f3ab862bd7
 //operations
 void	pb(t_data *data);
 void	pa(t_data *data);

@@ -1,17 +1,13 @@
 #include "../push_swap.h"
 
-void	free_split(char **res)
+void	ft_error(void)
 {
-<<<<<<< HEAD
     write(2,"Error\n",6);
     return;
 }
-#include "../push_swap.h"
 
 void	free_split(char **res)
 {
-=======
->>>>>>> c551ae3afcccf1241aa39bbe1ac762f3ab862bd7
 	int	i;
 
 	i = 0;
