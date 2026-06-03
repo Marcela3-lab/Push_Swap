@@ -77,4 +77,5 @@ void	medium(t_data *data)
 	chunk_size = (int)ft_sqrt(data->stack_a->size);
 	push_chunks_to_b(data, chunk_size);
 	push_back_to_a(data);
+	data->bench.complexity = onn;
 }

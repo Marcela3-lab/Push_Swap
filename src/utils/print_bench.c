@@ -75,4 +75,5 @@ void	print_bench(t_data *data)
     print_strategy(data->flags.strategy, data->bench.complexity);
     print_sum_ops(&data->bench);
 	print_ops(&data->bench);
+	return ;
 }

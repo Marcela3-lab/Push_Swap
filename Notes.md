@@ -82,9 +82,13 @@ comecei a desenvolver o sort 3 numbers (que nao precisa de chamar disorder nem a
 Encontrei um erro nas funcoes de operacoes (nao estao a atulizar o tail)
 TO DO: rever funcoes de operacoes para validar que os nos e stacks sao atualizados (next, prev, head e tail).
 
-### NAO ESQUECER:
+# TESTES:
+Errors include, for example: arguments that are not integers, integers outside the valid range, or duplicate values.
+
+# NAO ESQUECER:
 - norminette
 - substituir printf por ft_printf se usarmos
-- fazer free cada vez que ha chamadas de funcoes que usam malloc
+- fazer free cada vez que ha chamadas de funcoes que usam malloc - verificar com valgrind --leak-check=full
 - mudar algumas funcoes para static
 - mudar nomes de ficheiros e funcoes para ingles - separar palavras por _
+- ficheiro Readme
