@@ -1,23 +1,22 @@
 #include "../push_swap.h"
 #include <limits.h>
 
-int	num_duplicate(int *arr, int j)
+static int	num_duplicate(int *arr, int j)
 {
 	int	i;
 
 	i = j - 1;
-	
-		while (i >= 0 )
-		{
-			if (arr[i] == arr[j])
+	while (i >= 0)
+	{
+		if (arr[i] == arr[j])
 		{
 			return (1);
 		}
-		i--;		
+		i--;
 	}
-	return 0;
+	return (0);
 }
-// 
+
 int	num_valid(char *str)
 {
 	int	i;
@@ -38,42 +37,36 @@ int	num_valid(char *str)
 	return (1);
 }
 
-t_flags verificar_flags(int argc, char **argv)
+static void	set_strategy(t_flags *flags, char *arg)
 {
-	int i;
-	t_flags flags;
+	if (ft_strcmp(arg, "--simple") == 0)
+		flags->strategy = start_simple;
+	else if (ft_strcmp(arg, "--medium") == 0)
+		flags->strategy = start_medium;
+	else if (ft_strcmp(arg, "--complex") == 0)
+		flags->strategy = start_complex;
+	else if (ft_strcmp(arg, "--adaptive") == 0)
+		flags->strategy = start_adaptive;
+	else
+		return ;
+	flags->has_flags = 1;
+}
+
+t_flags	verificar_flags(int argc, char **argv)
+{
+	int		i;
+	t_flags	flags;
 
 	i = 1;
 	flags.has_flags = 0;
 	flags.has_bench = 0;
 	flags.strategy = start_adaptive;
-
 	while (i < argc)
 	{
-		if (ft_strcmp(argv[i], "--simple") == 0)
-		{
-			flags.strategy = start_simple;
-			flags.has_flags = 1;
-		}
-		else if (ft_strcmp(argv[i], "--medium") == 0)
-		{
-			flags.strategy = start_medium;
-			flags.has_flags = 1;
-		}
-		else if (ft_strcmp(argv[i], "--complex") == 0)
-		{
-			flags.strategy = start_complex;
-			flags.has_flags = 1;
-		}
-		else if (ft_strcmp(argv[i], "--adaptive") == 0)
-		{
-			flags.strategy = start_adaptive;
-			flags.has_flags = 1;
-		}
-		else if (ft_strcmp(argv[i], "--bench") == 0)
-		{
+		if (ft_strcmp(argv[i], "--bench") == 0)
 			flags.has_bench = 1;
-		}
+		else
+			set_strategy(&flags, argv[i]);
 		i++;
 	}
 	return (flags);
@@ -93,7 +86,6 @@ int	numbers_verifications(char **res, int *numbers, int *index)
 		if (num > INT_MAX || num < INT_MIN)
 			ft_error();
 		numbers[*index] = (int)num;
-
 		if (*index >= 1)
 		{
 			if (num_duplicate(numbers, *index))
@@ -105,17 +97,14 @@ int	numbers_verifications(char **res, int *numbers, int *index)
 	return (0);
 }
 
-
 // int	main(int argc, char **argv)
 // {
 // 	int		i;
 // 	int res;
 // 	int arr[] = {4, 6, 42};
-
 // 	i = 1;
 // 	// while (i < argc)
 // 	// {
-		
 // 	// 	i++;
 // 	// }
 // 	res = num_duplicate(arr, 2);

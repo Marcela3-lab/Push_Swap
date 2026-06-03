@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   revrotatestacks_ops.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcebar <marcebar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marcela <marcela@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 17:21:36 by marcebar          #+#    #+#             */
-/*   Updated: 2026/06/02 17:23:55 by marcebar         ###   ########.fr       */
+/*   Updated: 2026/06/03 12:40:15 by marcela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	revrotate(t_stack *stack)
+static void	revrotate(t_stack *stack)
 {
 	t_node	*tail_node;
 

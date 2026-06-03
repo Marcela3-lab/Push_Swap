@@ -1,7 +1,6 @@
 #include "../push_swap.h"
 
 t_node	*max_index_node(t_node *current)
-
 {
 	t_node	*max;
 
@@ -21,19 +20,17 @@ void	push_chunks_to_b(t_data *data, int chunk_size)
 {
 	int	start;
 	int	end;
-	int j;
+	int	j;
 
 	j = data->stack_a->size;
 	start = 0;
 	end = chunk_size - 1;
-
 	while (j > 0)
 	{
 		if (data->stack_a->head->index >= start
 			&& data->stack_a->head->index <= end)
 		{
 			pb(data);
-
 			start++;
 			end++;
 		}
@@ -50,31 +47,19 @@ void	push_back_to_a(t_data *data)
 	while (data->stack_b->size > 0)
 	{
 		update_positions(data->stack_b);
-
 		max = max_index_node(data->stack_b->head);
-
 		while (max->position != 0)
 		{
 			update_positions(data->stack_b);
-
 			if (max->position <= (int)data->stack_b->size / 2)
 				rb(data);
 			else
 				rrb(data);
 		}
-	
-	// t_node *min = malloc(sizeof(t_node));
-	// min = min_index_node(a->head);
-	// printf("%d:%d", min->value, min->position);
-
-	// update_positions(a);
-	// printf("%d->%d->%d->%d\n", node1->position, node2->position, node3->position, node4->position);
-	
-
-	//free
 		pa(data);
 	}
 }
+
 int	ft_sqrt(int n)
 {
 	int	i;
@@ -84,18 +69,12 @@ int	ft_sqrt(int n)
 		i++;
 	return (i);
 }
+
 void	medium(t_data *data)
 {
 	int	chunk_size;
 
 	chunk_size = (int)ft_sqrt(data->stack_a->size);
-
 	push_chunks_to_b(data, chunk_size);
 	push_back_to_a(data);
 }
-
-//TESTES MAIN
-// int main()
-// {
- 	
-// }

@@ -12,11 +12,12 @@ static unsigned int	count_bits(int n)
 	}
 	return (i);
 }
+
 void	complex(t_data *data)
 {
-	int	i;
-	int	n;
-	int	j;
+	int		i;
+	int		n;
+	int		j;
 	t_node	*node;
 
 	i = 0;
@@ -28,7 +29,7 @@ void	complex(t_data *data)
 		node = data->stack_a->head;
 		while (j >= 0)
 		{
-			if((node->index >> i) & 1)
+			if ((node->index >> i) & 1)
 				ra(data);
 			else
 				pb(data);
@@ -42,7 +43,6 @@ void	complex(t_data *data)
 	data->bench.complexity = onlogn;
 	return ;
 }
-
 
 /* //test count_bits
 int main ()

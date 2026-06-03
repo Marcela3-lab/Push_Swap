@@ -1,19 +1,5 @@
 #include "../push_swap.h"
 
-int	count_args(char **res)
-{
-	int	i;
-
-	i = 0;
-	while (res[i])
-		i++;
-	return (i);
-}
-
-char	**split_args(char *arg, char c)
-{
-	return (ft_split(arg, c));
-} 
 int	ft_strcmp(const char *s1, const char *s2)
 {
 	int	i;
@@ -24,49 +10,62 @@ int	ft_strcmp(const char *s1, const char *s2)
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
 
-int	*splitfirst(int argc, char **argv, int *size)
+int	jump_flags(char *argv)
 {
-	int			i;
-	char		**res;
-	int			*numbers;
-	int			index;
+	if (ft_strcmp(argv, "--simple") == 0
+		|| ft_strcmp(argv, "--medium") == 0
+		|| ft_strcmp(argv, "--complex") == 0
+		|| ft_strcmp(argv, "--adaptive") == 0
+		|| ft_strcmp(argv, "--bench") == 0)
+		return (1);
+	return (0);
+}
 
-	i = 1;
+int	*return_numbers(char **argv, int argc, int *size)
+{
+	int	i;
+	int	*numbers;
+
+	i = 0;
 	*size = 0;
-	index = 0;
 	while (i < argc)
 	{
-		if (ft_strcmp(argv[i], "--simple") == 0
-			|| ft_strcmp(argv[i], "--medium") == 0
-			|| ft_strcmp(argv[i], "--complex") == 0
-			|| ft_strcmp(argv[i], "--adaptive") == 0
-			|| ft_strcmp(argv[i], "--bench") == 0)
-		{
+		if (jump_flags(argv[i]))
 			i++;
-			continue;
+		else
+		{
+			*size += count_args(split_args(argv[i], ' '));
+			i++;
 		}
-		*size += count_args(split_args(argv[i], ' '));
-		i++;
 	}
 	numbers = malloc(sizeof(int) * (*size));
-	i = 1;
 	if (!numbers)
 		return (NULL);
+	return (numbers);
+}
+
+int	*splitfirst(int argc, char **argv, int *size)
+{
+	int		i;
+	int		index;
+	int		*numbers;
+	char	**res;
+
+	i = 1;
+	index = 0;
+	numbers = return_numbers(argv, argc, size);
 	while (i < argc)
 	{
-		if (ft_strcmp(argv[i], "--simple") == 0
-			|| ft_strcmp(argv[i], "--medium") == 0
-			|| ft_strcmp(argv[i], "--complex") == 0
-			|| ft_strcmp(argv[i], "--adaptive") == 0
-			|| ft_strcmp(argv[i], "--bench") == 0)
+		if (!jump_flags(argv[i]))
 		{
-			i++;
-			continue;
+			res = split_args(argv[i], ' ');
+			if (!res || numbers_verifications(res, numbers, &index))
+			{
+				free_spl(res);
+				return (NULL);
+			}
+			free_spl(res);
 		}
-		res = split_args(argv[i], ' ');
-		if (!res || numbers_verifications(res, numbers, &index))
-			return (NULL);
-		// free_split(res);
 		i++;
 	}
 	return (numbers);

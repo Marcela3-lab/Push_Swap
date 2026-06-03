@@ -2,7 +2,7 @@
 
 t_node	*min_index_node(t_node *current)
 {
-	t_node *minimum;
+	t_node	*minimum;
 
 	minimum = NULL;
 	while (current)
@@ -11,9 +11,9 @@ t_node	*min_index_node(t_node *current)
 			minimum = current;
 		else if (minimum->index > current->index)
 			minimum = current;
-		current = current->next;	
+		current = current->next;
 	}
-	return(minimum);
+	return (minimum);
 }
 
 void	update_positions(t_stack *stack)
