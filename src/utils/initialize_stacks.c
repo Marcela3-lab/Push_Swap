@@ -1,6 +1,5 @@
 #include "../push_swap.h"
 
-//funcao que faz clear das double lists (stack e nodes)
 void	stack_clear(t_stack **stack)
 {
 	t_node	*node;
@@ -19,7 +18,6 @@ void	stack_clear(t_stack **stack)
 	*stack = NULL;
 }
 
-// funcao que coloca o node no topo da stack:
 void	stack_addtop(t_node *node, t_stack *stack)
 {
 	if (!node || !stack)
@@ -39,7 +37,6 @@ void	stack_addtop(t_node *node, t_stack *stack)
 	}
 }
 
-//inicializa node com inteiro
 t_node	*create_node(int number)
 {
 	t_node *new_node;
