@@ -24,7 +24,7 @@ int	*return_numbers(char **argv, int argc, int *size)
 	int		i;
 	char	**tmp;
 
-	i = 0;
+	i = 1;
 	*size = 0;
 	while (i < argc)
 	{

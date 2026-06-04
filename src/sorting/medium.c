@@ -55,7 +55,7 @@ void	push_back_to_a(t_data *data)
         max = max_index_node(data->stack_b->head);
         while (max->position != 0)
         {
-            if (max->position <= (int)data->stack_b->size / 2)
+            if (max->position < (int)data->stack_b->size / 2)
                 rb(data);
             else
                 rrb(data);
