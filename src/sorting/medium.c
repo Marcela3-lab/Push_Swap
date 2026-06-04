@@ -20,44 +20,49 @@ void	push_chunks_to_b(t_data *data, int chunk_size)
 {
 	int	start;
 	int	end;
-	int	j;
+	int	pushed;
+	int	total;
 
-	j = data->stack_a->size;
+	total = data->stack_a->size;
 	start = 0;
 	end = chunk_size - 1;
-	while (j > 0)
+	while (start < total)
 	{
-		if (data->stack_a->head->index >= start
-			&& data->stack_a->head->index <= end)
+		pushed = 0;
+		while (pushed < chunk_size && data->stack_a->size > 0)
 		{
-			pb(data);
-			start++;
-			end++;
+			if (data->stack_a->head->index >= start
+				&& data->stack_a->head->index <= end)
+			{
+				pb(data);
+				pushed++;
+			}
+			else
+				ra(data);
 		}
-		else
-			ra(data);
-		j--;
+		start = end + 1;
+		end += chunk_size;
 	}
 }
 
 void	push_back_to_a(t_data *data)
 {
-	t_node	*max;
+    t_node	*max;
 
-	while (data->stack_b->size > 0)
-	{
-		update_positions(data->stack_b);
-		max = max_index_node(data->stack_b->head);
-		while (max->position != 0)
-		{
-			update_positions(data->stack_b);
-			if (max->position <= (int)data->stack_b->size / 2)
-				rb(data);
-			else
-				rrb(data);
-		}
-		pa(data);
-	}
+    while (data->stack_b->size > 0)
+    {
+        update_positions(data->stack_b);
+        max = max_index_node(data->stack_b->head);
+        while (max->position != 0)
+        {
+            if (max->position <= (int)data->stack_b->size / 2)
+                rb(data);
+            else
+                rrb(data);
+            update_positions(data->stack_b);
+        }
+        pa(data);
+    }
 }
 
 int	ft_sqrt(int n)

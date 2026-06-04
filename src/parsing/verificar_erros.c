@@ -89,7 +89,7 @@ int	numbers_verifications(char **res, int *numbers, int *index)
 		if (*index >= 1)
 		{
 			if (num_duplicate(numbers, *index))
-				return(1);
+				return (1);
 		}
 		(*index)++;
 		j++;

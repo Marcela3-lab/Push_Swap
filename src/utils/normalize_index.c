@@ -1,9 +1,9 @@
 #include "../push_swap.h"
 
-t_node *min_value_node(t_node *current)
+t_node	*min_value_node(t_node *current)
 {
 	t_node	*minimum;
-		
+
 	minimum = NULL;
 	while (current)
 	{
@@ -40,13 +40,12 @@ float	compute_disorder(t_stack *a)
 		current_i = current_i->next;
 	}
 	return (mistakes / total_pairs);
-}	
+}
 
 void	normalize_index(t_stack *a)
 {
 	size_t	i;
 
-	//definir o index para cada node
 	i = 0;
 	while (i < a->size)
 	{

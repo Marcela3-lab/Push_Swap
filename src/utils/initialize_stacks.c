@@ -39,7 +39,7 @@ void	stack_addtop(t_node *node, t_stack *stack)
 
 t_node	*create_node(int number)
 {
-	t_node *new_node;
+	t_node	*new_node;
 
 	new_node = malloc(sizeof(t_node));
 	if (!new_node)
@@ -54,7 +54,7 @@ t_node	*create_node(int number)
 
 t_stack	*stack_init(int *arraynbr, int sizearray)
 {
-	int	i;
+	int		i;
 	t_stack	*stack;
 	t_node	*node;
 
@@ -67,7 +67,7 @@ t_stack	*stack_init(int *arraynbr, int sizearray)
 	stack->size = 0;
 	if (sizearray == 0)
 		return (stack);
-	while(i >= 0)
+	while (i >= 0)
 	{
 		node = create_node(arraynbr[i]);
 		if (!node)
@@ -77,4 +77,3 @@ t_stack	*stack_init(int *arraynbr, int sizearray)
 	}
 	return (stack);
 }
-

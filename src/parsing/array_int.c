@@ -2,8 +2,9 @@
 
 int	ft_strcmp(const char *s1, const char *s2)
 {
-	int	i = 0;
+	int	i;
 
+	i = 0;
 	while (s1[i] && s2[i] && s1[i] == s2[i])
 		i++;
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
@@ -20,9 +21,10 @@ int	jump_flags(char *argv)
 
 int	*return_numbers(char **argv, int argc, int *size)
 {
-	int		i = 1;
+	int		i;
 	char	**tmp;
 
+	i = 0;
 	*size = 0;
 	while (i < argc)
 	{
@@ -41,19 +43,22 @@ int	*return_numbers(char **argv, int argc, int *size)
 
 int	*splitfirst(int argc, char **argv, int *size)
 {
-	int		i = 1;
-	int		index = 0;
+	int		i;
+	int		index;
 	int		*numbers;
 	char	**res;
 
+	i = 1;
+	index = 0;
 	numbers = return_numbers(argv, argc, size);
 	if (!numbers)
 		return (NULL);
-
 	while (i < argc)
 	{
 		if (!jump_flags(argv[i]))
 		{
+			if (!num_valid(argv[i]))
+				return (free(numbers), NULL);
 			res = split_args(argv[i], ' ');
 			if (!res)
 				return (free(numbers), NULL);

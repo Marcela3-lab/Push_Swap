@@ -1,19 +1,18 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include <unistd.h> // para write & read
-#include <stdlib.h> // para malloc & free
-#include <stdio.h> // Printf so para testes
-#include <limits.h>
-#include "../libft/libft.h"
-
+# include <unistd.h> // para write & read
+# include <stdlib.h> // para malloc & free
+# include <stdio.h> // Printf so para testes
+# include <limits.h>
+# include "../libft/libft.h"
 
 //declaracao de typedefs para linked lists
 typedef struct s_node
 {
 	int				value;
 	int				index;
-	int				position; 
+	int				position;
 	struct s_node	*prev;
 	struct s_node	*next;
 }	t_node;
@@ -37,7 +36,7 @@ typedef enum e_strategy
 	start_simple,
 	start_medium,
 	start_complex,
-	start_adaptive
+	start_adaptive 
 }t_strategy;
 
 typedef enum e_complexity
@@ -124,7 +123,7 @@ void	ss(t_data *data);
 //algorithms
 void	simple(t_data *data);
 void	complex(t_data *data);
-void    sort_small(t_data *data);
-void    medium(t_data *data);
+void	sort_small(t_data *data);
+void	medium(t_data *data);
 
 # endif

@@ -27,4 +27,4 @@ int	main(int argc, char **argv)
 	stack_clear(&data.stack_a);
 	stack_clear(&data.stack_b);
 	return (0);
-}	 
+}

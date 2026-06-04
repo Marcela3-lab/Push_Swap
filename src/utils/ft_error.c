@@ -2,8 +2,8 @@
 
 void	ft_error(void)
 {
-    write(2,"Error\n",6);
-    return;
+	write(2, "Error\n", 6);
+	return ;
 }
 
 void	free_split(char **res)
@@ -21,7 +21,7 @@ void	free_split(char **res)
 	free (res);
 }
 
-void    free_and_exit(char **res, int *numbers)
+void	free_and_exit(char **res, int *numbers)
 {
 	if (res)
 		free_split(res);
