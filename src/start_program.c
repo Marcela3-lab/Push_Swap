@@ -10,11 +10,11 @@ static void	run_adaptive(t_data *data)
 	else if (d >= 0.2 && d < 0.5)
 		medium(data);
 	else if (d >= 0.5)
-		complex (data);
+		complex(data);
 	return ;
 }
 
-void    start_program(t_data *data)
+void	start_program(t_data *data)
 {
 	float	disorder;
 
@@ -28,7 +28,8 @@ void    start_program(t_data *data)
 	data->bench.disorder = disorder;
 	if (disorder == 0)
 		return ;
-	if (data->flags.has_flags == 1 && data->flags.strategy != start_adaptive)
+	if (data->flags.has_flags == 1
+		&& data->flags.strategy != start_adaptive)
 	{
 		if (data->flags.strategy == start_simple)
 			simple(data);

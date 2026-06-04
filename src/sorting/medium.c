@@ -47,22 +47,22 @@ void	push_chunks_to_b(t_data *data, int chunk_size)
 
 void	push_back_to_a(t_data *data)
 {
-    t_node	*max;
+	t_node	*max;
 
-    while (data->stack_b->size > 0)
-    {
-        update_positions(data->stack_b);
-        max = max_index_node(data->stack_b->head);
-        while (max->position != 0)
-        {
-            if (max->position < (int)data->stack_b->size / 2)
-                rb(data);
-            else
-                rrb(data);
-            update_positions(data->stack_b);
-        }
-        pa(data);
-    }
+	while (data->stack_b->size > 0)
+	{
+		update_positions(data->stack_b);
+		max = max_index_node(data->stack_b->head);
+		while (max->position != 0)
+		{
+			if (max->position < (int)data->stack_b->size / 2)
+				rb(data);
+			else
+				rrb(data);
+			update_positions(data->stack_b);
+		}
+		pa(data);
+	}
 }
 
 int	ft_sqrt(int n)
@@ -79,7 +79,7 @@ void	medium(t_data *data)
 {
 	int	chunk_size;
 
-	chunk_size = (int)ft_sqrt(data->stack_a->size);
+	chunk_size = ft_sqrt(data->stack_a->size);
 	push_chunks_to_b(data, chunk_size);
 	push_back_to_a(data);
 	data->bench.complexity = onn;

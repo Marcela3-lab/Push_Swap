@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcebar <marcebar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marcela <marcela@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 13:28:02 by marcebar          #+#    #+#             */
-/*   Updated: 2026/05/27 12:06:24 by marcebar         ###   ########.fr       */
+/*   Updated: 2026/06/04 23:36:24 by marcela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@
 # include <fcntl.h>
 # include <unistd.h>
 
-int		ft_isdigit(int c);
-int		ft_isprint(int c);
-int		ft_isalpha(int c);
-int		ft_isalnum(int c);
+int			ft_isdigit(int c);
+int			ft_isprint(int c);
+int			ft_isalpha(int c);
+int			ft_isalnum(int c);
 long long	ft_atoi(const char *str);
 int		ft_isascii(int c);
 
