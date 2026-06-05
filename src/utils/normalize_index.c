@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   normalize_index.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fdos-rei <fdos-rei@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/05 15:24:00 by fdos-rei          #+#    #+#             */
+/*   Updated: 2026/06/05 15:24:20 by fdos-rei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
 t_node	*min_value_node(t_node *current)
@@ -54,47 +66,3 @@ void	normalize_index(t_stack *a)
 	}
 	return ;
 }
-/* int main ()
-{
-	t_stack *a = malloc(sizeof(t_stack));
-	t_node *node1 = malloc(sizeof(t_node));
-	t_node *node2 = malloc(sizeof(t_node));
-	t_node *node3 = malloc(sizeof(t_node));
-	float n = 0;
-
-	node1->index = -1;
-	node1->value = 3;
-	node2->index = -1;
-	node2->value = 2;
-	node3->index = -1;
-	node3->value = 1;
-	node3->next = NULL;
-	node3->prev = node2;
-	node2->next = node3;
-	node2->prev = node1;
-	node1->next = node2;
-	node1->prev = NULL;
-	a -> head = node1;
-	a -> size = 3;
-
-	printf("BEFORE\nnode1 index: %d\nnode2 index: %d\nnode3 index: %d\nsize = %zu\n", node1->index, node2->index, node3->index, a->size);
-	n = normalize_index(a);
-	printf("AFTER\nnode1 index: %d\nnode2 index: %d\nnode3 index: %d\ndisorder= %f\n", node1->index, node2->index, node3->index, n);
-	free(a);
-	free(node1);
-	free(node2);
-	free(node3);
-	return(0);
-} */
-
-/* 	// verificar se esta ordenado - Meu
-	i = 0;
-	current = a->head;
-	while (i < a->size)
-	{
-		if (current->index != i)
-			return (0); 
-		i++;
-		current = current->next;
-	}
-	return (1); */

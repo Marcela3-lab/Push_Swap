@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print_bench.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fdos-rei <fdos-rei@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/05 15:24:33 by fdos-rei          #+#    #+#             */
+/*   Updated: 2026/06/05 15:42:14 by fdos-rei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
 static void	print_disorder(float d)
@@ -35,28 +47,29 @@ static void	print_sum_ops(t_bench *bench)
 
 static void	print_ops(t_bench *bench)
 {
-	const char	*ops1[] = {" sa: ", " sb: ", " ss: ", " pa: ", " pb: "};
-	int			*values1[] = {&bench->sa, &bench->sb, &bench->ss, &bench->pa, &bench->pb};
-	const char	*ops2[] = {" ra: ", " rb: ", " rr: ", " rra: ", " rrb: ", " rrr: "};
-	int			*values2[] = {&bench->ra, &bench->rb, &bench->rr, &bench->rra, &bench->rrb, &bench->rrr};
-	int			i;
-
-	i = 0;
-	write(2, "[bench]", 7);
-	while (i < 5)
-	{
-		ft_putstr_fd((char *)ops1[i], 2);
-		ft_putnbr_fd(*values1[i], 2);
-		i++;
-	}
+	write(2, "[bench] sa: ", 12);
+	ft_putnbr_fd(bench->sa, 2);
+	write(2, " sb: ", 5);
+	ft_putnbr_fd(bench->sb, 2);
+	write(2, " ss: ", 5);
+	ft_putnbr_fd(bench->ss, 2);
+	write(2, " pa: ", 5);
+	ft_putnbr_fd(bench->pa, 2);
+	write(2, " pb: ", 5);
+	ft_putnbr_fd(bench->pb, 2);
 	write(2, "\n[bench]", 8);
-	i = 0;
-	while (i < 6)
-	{
-		ft_putstr_fd((char *)ops2[i], 2);
-		ft_putnbr_fd(*values2[i], 2);
-		i++;
-	}
+	write(2, " ra: ", 5);
+	ft_putnbr_fd(bench->ra, 2);
+	write(2, " rb: ", 5);
+	ft_putnbr_fd(bench->rb, 2);
+	write(2, " rr: ", 5);
+	ft_putnbr_fd(bench->rr, 2);
+	write(2, " rra: ", 6);
+	ft_putnbr_fd(bench->rra, 2);
+	write(2, " rrb: ", 6);
+	ft_putnbr_fd(bench->rrb, 2);
+	write(2, " rrr: ", 6);
+	ft_putnbr_fd(bench->rrr, 2);
 	write(2, "\n", 1);
 }
 
