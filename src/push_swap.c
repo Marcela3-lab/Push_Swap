@@ -11,7 +11,9 @@ int	main(int argc, char **argv)
 		free_and_exit(NULL, NULL);
 	ft_bzero(&data, sizeof(t_data));
 	data.flags = verificar_flags(argc, argv);
+
 	data.stack_a = stack_init(res, size);
+	
 	if (!data.stack_a)
 		free_and_exit(NULL, res);
 	data.stack_b = stack_init(NULL, 0);

@@ -14,7 +14,7 @@ static void	run_adaptive(t_data *data)
 	return ;
 }
 
-void    start_program(t_data *data)
+void	start_program(t_data *data)
 {
 	float	disorder;
 

@@ -45,25 +45,25 @@ void	push_chunks_to_b(t_data *data, int chunk_size)
 	}
 }
 
-void	push_back_to_a(t_data *data)
-{
-    t_node	*max;
+	void	push_back_to_a(t_data *data)
+	{
+		t_node	*max;
 
-    while (data->stack_b->size > 0)
-    {
-        update_positions(data->stack_b);
-        max = max_index_node(data->stack_b->head);
-        while (max->position != 0)
-        {
-            if (max->position <= (int)data->stack_b->size / 2)
-                rb(data);
-            else
-                rrb(data);
-            update_positions(data->stack_b);
-        }
-        pa(data);
-    }
-}
+		while (data->stack_b->size > 0)
+		{
+			update_positions(data->stack_b);
+			max = max_index_node(data->stack_b->head);
+			while (max->position != 0)
+			{
+				if (max->position <= (int)data->stack_b->size / 2)
+					rb(data);
+				else
+					rrb(data);
+				update_positions(data->stack_b);
+			}
+			pa(data);
+		}
+	}
 
 int	ft_sqrt(int n)
 {

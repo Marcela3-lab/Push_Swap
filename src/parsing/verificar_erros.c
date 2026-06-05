@@ -20,7 +20,8 @@ static int	num_duplicate(int *arr, int j)
 int	num_valid(char *str)
 {
 	int	i;
-
+	if (!str)
+		return (0);
 	i = 0;
 	if (str[i] == '-' || str[i] == '+')
 		i++;
