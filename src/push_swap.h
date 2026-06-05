@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fdos-rei <fdos-rei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marcebar <marcebar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 15:44:33 by fdos-rei          #+#    #+#             */
-/*   Updated: 2026/06/05 15:44:34 by fdos-rei         ###   ########.fr       */
+/*   Updated: 2026/06/05 19:03:43 by marcebar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,6 @@ void	normalize_index(t_stack *a);
 float	compute_disorder(t_stack *a);
 void	update_positions(t_stack *stack);
 void	print_bench(t_data *data);
-char	**split_args(char *arg, char c);
 void	free_split(char **res);
 void	free_and_exit(char **res, int *numbers);
 

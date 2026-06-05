@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   args.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fdos-rei <fdos-rei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marcebar <marcebar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 14:50:03 by fdos-rei          #+#    #+#             */
-/*   Updated: 2026/06/05 14:52:34 by fdos-rei         ###   ########.fr       */
+/*   Updated: 2026/06/05 19:05:31 by marcebar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,4 @@ int	count_args(char **res)
 	while (res[i])
 		i++;
 	return (i);
-}
-
-char	**split_args(char *arg, char c)
-{
-	return (ft_split(arg, c));
 }

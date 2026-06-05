@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   array_int.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fdos-rei <fdos-rei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marcebar <marcebar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 14:50:11 by fdos-rei          #+#    #+#             */
-/*   Updated: 2026/06/05 16:22:33 by fdos-rei         ###   ########.fr       */
+/*   Updated: 2026/06/05 19:03:18 by marcebar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static int	*return_numbers(char **argv, int argc, int *size)
 	{
 		if (!jump_flags(argv[i]))
 		{
-			tmp = split_args(argv[i], ' ');
+			tmp = ft_split(argv[i], ' ');
 			if (!tmp)
 				return (NULL);
 			*size += count_args(tmp);
@@ -69,11 +69,14 @@ int	*splitfirst(int argc, char **argv, int *size)
 	{
 		if (!jump_flags(argv[i]))
 		{
-			res = split_args(argv[i], ' ');
+			res = ft_split(argv[i], ' ');
 			if (!res)
 				return (free(numbers), NULL);
 			if (!num_valid(res[0]))
+			{
+				free_split(res);
 				return (free(numbers), NULL);
+			}
 			if (numbers_verifications(res, numbers, &index))
 				free_and_exit(res, numbers);
 			free_split(res);
