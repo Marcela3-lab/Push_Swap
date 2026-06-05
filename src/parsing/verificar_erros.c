@@ -6,7 +6,7 @@
 /*   By: fdos-rei <fdos-rei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 14:50:16 by fdos-rei          #+#    #+#             */
-/*   Updated: 2026/06/05 14:50:17 by fdos-rei         ###   ########.fr       */
+/*   Updated: 2026/06/05 16:29:30 by fdos-rei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ static int	num_duplicate(int *arr, int j)
 int	num_valid(char *str)
 {
 	int	i;
+
 	if (!str)
 		return (0);
 	i = 0;
