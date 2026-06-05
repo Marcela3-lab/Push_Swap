@@ -59,14 +59,14 @@ int main()
 	data.stack_b->size = 0;
 
 
-	//PRINTF
-    // printf("BEFORE:\n");
-	// // printf("%d->%d->%d->%d\n", node1->value, node2->value, node3->value, node4->value);
-	// printf("a head: %d\na tail: %d\n", data.stack_a->head->value, data.stack_a->tail->value);
-	// printf("size a: %zu\nsize b: %zu\n", data.stack_a->size, data.stack_b->size);
-	// start_program(&data);
-    // printf("AFTER\na head: %d\na tail: %d\n", data.stack_a->head->value, data.stack_a->tail->value);
-	// printf("size a: %zu\nsize b: %zu\n", data.stack_a->size, data.stack_b->size);
+	// PRINTF
+    printf("BEFORE:\n");
+	// printf("%d->%d->%d->%d\n", node1->value, node2->value, node3->value, node4->value);
+	printf("a head: %d\na tail: %d\n", data.stack_a->head->value, data.stack_a->tail->value);
+	printf("size a: %zu\nsize b: %zu\n", data.stack_a->size, data.stack_b->size);
+	complex(&data);
+    printf("AFTER\na head: %d\na tail: %d\n", data.stack_a->head->value, data.stack_a->tail->value);
+	printf("size a: %zu\nsize b: %zu\n", data.stack_a->size, data.stack_b->size);
     
     // //teste de soma de operacoes no bench
     // printf("sa: %d | ra: %d | rra: %d\n", data.bench.sa, data.bench.ra, data.bench.rra);
@@ -75,7 +75,7 @@ int main()
     // printf("strategy: %d\n", data.flags.strategy);
 
 	//teste print_bench
-	print_bench(&data);
+	// print_bench(&data);
 	
 
 	//free

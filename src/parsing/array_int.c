@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   array_int.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fdos-rei <fdos-rei@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/05 14:50:11 by fdos-rei          #+#    #+#             */
+/*   Updated: 2026/06/05 14:50:12 by fdos-rei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
 int	ft_strcmp(const char *s1, const char *s2)
@@ -19,7 +31,7 @@ int	jump_flags(char *argv)
 		|| !ft_strcmp(argv, "--bench"));
 }
 
-int	*return_numbers(char **argv, int argc, int *size)
+static int	*return_numbers(char **argv, int argc, int *size)
 {
 	int		i;
 	char	**tmp;
@@ -34,7 +46,7 @@ int	*return_numbers(char **argv, int argc, int *size)
 			if (!tmp)
 				return (NULL);
 			*size += count_args(tmp);
-			free_spl(tmp);
+			free_split(tmp);
 		}
 		i++;
 	}
@@ -44,7 +56,7 @@ int	*return_numbers(char **argv, int argc, int *size)
 int	*splitfirst(int argc, char **argv, int *size)
 {
 	int		i;
-	int		index;
+	int		index; // da para reduzir a funcao retirando esta variavel?
 	int		*numbers;
 	char	**res;
 	int		j;
@@ -65,8 +77,8 @@ int	*splitfirst(int argc, char **argv, int *size)
 			if (!num_valid(res[j]))
 				return (free(numbers), NULL);
 			if (numbers_verifications(res, numbers, &index))
-				return (free_spl(res), free(numbers), NULL);
-			free_spl(res);
+				free_and_exit(res, numbers);
+			free_split(res);
 		}
 		i++;
 	}

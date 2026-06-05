@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   complex.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fdos-rei <fdos-rei@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/05 12:51:38 by fdos-rei          #+#    #+#             */
+/*   Updated: 2026/06/05 14:46:06 by fdos-rei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
 static unsigned int	count_bits(int n)
@@ -13,29 +25,35 @@ static unsigned int	count_bits(int n)
 	return (i);
 }
 
+static void	complex_ops(t_data *data, int i)
+{
+	int		j;
+	t_node	*node;
+
+	j = data->stack_a->size - 1;
+	node = data->stack_a->head;
+	while (j >= 0)
+	{
+		if ((node->index >> i) & 1)
+			ra(data);
+		else
+			pb(data);
+		node = data->stack_a->head;
+		j--;
+	}
+	return ;
+}
+
 void	complex(t_data *data)
 {
 	int		i;
 	int		n;
-	int		j;
-	t_node	*node;
 
 	i = 0;
-	j = data->stack_a->size - 1;
-	n = count_bits(j);
+	n = count_bits(data->stack_a->size - 1);
 	while (i < n)
 	{
-		j = data->stack_a->size - 1;
-		node = data->stack_a->head;
-		while (j >= 0)
-		{
-			if ((node->index >> i) & 1)
-				ra(data);
-			else
-				pb(data);
-			node = data->stack_a->head;
-			j--;
-		}
+		complex_ops(data, i);
 		while (data->stack_b->size != 0)
 			pa(data);
 		i++;
@@ -43,14 +61,3 @@ void	complex(t_data *data)
 	data->bench.complexity = onlogn;
 	return ;
 }
-
-/* //test count_bits
-int main ()
-{
-	int	n = 1;
-	int n1 = 10;
-	int n2 = 10045851;
-
-	printf("%u\n%u\n%u\n", count_bits(n), count_bits(n1), count_bits(n2));
-	return(0);
-} */

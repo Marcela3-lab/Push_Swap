@@ -1,5 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   args.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fdos-rei <fdos-rei@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/05 14:50:03 by fdos-rei          #+#    #+#             */
+/*   Updated: 2026/06/05 14:50:04 by fdos-rei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
-// »»-----► Number of lines: 6
+
 int	count_args(char **res)
 {
 	int	i;
@@ -15,17 +27,3 @@ char	**split_args(char *arg, char c)
 	return (ft_split(arg, c));
 }
 
-void	free_spl(char **split)
-{
-	int	i;
-
-	if (!split)
-		return ;
-	i = 0;
-	while (split[i])
-	{
-		free(split[i]);
-		i++;
-	}
-	free(split);
-}
