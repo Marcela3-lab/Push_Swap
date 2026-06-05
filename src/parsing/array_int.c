@@ -19,7 +19,7 @@ int	jump_flags(char *argv)
 		|| !ft_strcmp(argv, "--bench"));
 }
 
-int	*return_numbers(char **argv, int argc, int *size)
+static int	*return_numbers(char **argv, int argc, int *size)
 {
 	int		i;
 	char	**tmp;
@@ -34,7 +34,7 @@ int	*return_numbers(char **argv, int argc, int *size)
 			if (!tmp)
 				return (NULL);
 			*size += count_args(tmp);
-			free_spl(tmp);
+			free_split(tmp);
 		}
 		i++;
 	}
@@ -44,7 +44,7 @@ int	*return_numbers(char **argv, int argc, int *size)
 int	*splitfirst(int argc, char **argv, int *size)
 {
 	int		i;
-	int		index;
+	int		index; // da para reduzir a funcao retirando esta variavel?
 	int		*numbers;
 	char	**res;
 
@@ -63,8 +63,8 @@ int	*splitfirst(int argc, char **argv, int *size)
 			if (!res)
 				return (free(numbers), NULL);
 			if (numbers_verifications(res, numbers, &index))
-				return (free_spl(res), free(numbers), NULL);
-			free_spl(res);
+				free_and_exit(res, numbers);
+			free_split(res);
 		}
 		i++;
 	}

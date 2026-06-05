@@ -78,15 +78,15 @@ typedef struct s_data
 /* declaracao de funcoes */
 
 int		*splitfirst(int argc, char **argv, int *size);
+int		ft_strcmp(const char *s1, const char *s2);
+int		jump_flags(char *argv);
 int		count_args(char **res);
-int		ft_isdigit(int c);
-size_t	ft_strlen(const char *s);
+int		ft_isdigit(int c); // libft
+size_t	ft_strlen(const char *s); //libft
 int		num_valid(char *str);
 int		verificar_erros(char **args, int size);
-int		jump_flags(char *argv);
 t_flags	verificar_flags(int argc, char **argv);
 int		numbers_verifications(char **res, int *numbers, int *index);
-int		ft_strcmp(const char *s1, const char *s2);
 t_node	*get_min_node(t_node *current);
 void	pop_stack(t_node *node, t_stack *stack);
 void	stack_addtop(t_node *node, t_stack *stack);
@@ -98,9 +98,7 @@ void	normalize_index(t_stack *a);
 float	compute_disorder(t_stack *a);
 void	update_positions(t_stack *stack);
 void	print_bench(t_data *data);
-void	ft_error(void);
 char	**split_args(char *arg, char c);
-void	free_spl(char **split);
 void	free_split(char **res);
 void	free_and_exit(char **res, int *numbers);
 

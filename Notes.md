@@ -92,3 +92,4 @@ Errors include, for example: arguments that are not integers, integers outside t
 - mudar algumas funcoes para static
 - mudar nomes de ficheiros e funcoes para ingles - separar palavras por _
 - ficheiro Readme
+- passar ft_atol para utils porque nao e da Libft
