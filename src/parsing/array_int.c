@@ -59,7 +59,9 @@ int	*splitfirst(int argc, char **argv, int *size)
 	int		index; // da para reduzir a funcao retirando esta variavel?
 	int		*numbers;
 	char	**res;
+	int		j;
 
+	j = 0;
 	i = 1;
 	index = 0;
 	numbers = return_numbers(argv, argc, size);
@@ -69,10 +71,10 @@ int	*splitfirst(int argc, char **argv, int *size)
 	{
 		if (!jump_flags(argv[i]))
 		{
-			if (!num_valid(argv[i]))
-				return (free(numbers), NULL);
 			res = split_args(argv[i], ' ');
 			if (!res)
+				return (free(numbers), NULL);
+			if (!num_valid(res[j]))
 				return (free(numbers), NULL);
 			if (numbers_verifications(res, numbers, &index))
 				free_and_exit(res, numbers);
