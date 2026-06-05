@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pushpop_ops.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcebar <marcebar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fdos-rei <fdos-rei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 17:20:17 by marcebar          #+#    #+#             */
-/*   Updated: 2026/06/02 17:20:21 by marcebar         ###   ########.fr       */
+/*   Updated: 2026/06/05 12:02:31 by fdos-rei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,7 @@ void	pb(t_data *data)
 	pop_stack(node1, data->stack_a);
 	stack_addtop(node1, data->stack_b);
 	write(1, "pb\n", 3);
-	if (data->flags.has_bench == 1)
-		data->bench.pb += 1;
+	data->bench.pb += 1;
 }
 
 void	pa(t_data *data)
@@ -59,8 +58,7 @@ void	pa(t_data *data)
 	pop_stack(node1, data->stack_b);
 	stack_addtop(node1, data->stack_a);
 	write(1, "pa\n", 3);
-	if (data->flags.has_bench == 1)
-		data->bench.pa += 1;
+	data->bench.pa += 1;
 }
 /* int main()
 {

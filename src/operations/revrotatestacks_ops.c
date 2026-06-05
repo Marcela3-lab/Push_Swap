@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   revrotatestacks_ops.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcela <marcela@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fdos-rei <fdos-rei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 17:21:36 by marcebar          #+#    #+#             */
-/*   Updated: 2026/06/03 12:40:15 by marcela          ###   ########.fr       */
+/*   Updated: 2026/06/05 12:02:43 by fdos-rei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,14 @@ void	rra(t_data *data)
 {
 	revrotate(data->stack_a);
 	write(1, "rra\n", 4);
-	if (data->flags.has_bench == 1)
-		data->bench.rra += 1;
+	data->bench.rra += 1;
 }
 
 void	rrb(t_data *data)
 {
 	revrotate(data->stack_b);
 	write(1, "rrb\n", 4);
-	if (data->flags.has_bench == 1)
-		data->bench.rrb += 1;
+	data->bench.rrb += 1;
 }
 
 void	rrr(t_data *data)
@@ -48,8 +46,7 @@ void	rrr(t_data *data)
 	revrotate(data->stack_a);
 	revrotate(data->stack_b);
 	write(1, "rrr\n", 4);
-	if (data->flags.has_bench == 1)
-		data->bench.rrr += 1;
+	data->bench.rrr += 1;
 }
 
 /* int main()

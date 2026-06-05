@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotatestacks_ops.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcebar <marcebar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fdos-rei <fdos-rei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 17:24:53 by marcebar          #+#    #+#             */
-/*   Updated: 2026/06/02 17:25:38 by marcebar         ###   ########.fr       */
+/*   Updated: 2026/06/05 12:02:58 by fdos-rei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,14 @@ void	ra(t_data *data)
 {
 	rotate(data->stack_a);
 	write(1, "ra\n", 3);
-	if (data->flags.has_bench == 1)
-		data->bench.ra += 1;
+	data->bench.ra += 1;
 }
 
 void	rb(t_data *data)
 {
 	rotate(data->stack_b);
 	write(1, "rb\n", 3);
-	if (data->flags.has_bench == 1)
-		data->bench.rb += 1;
+	data->bench.rb += 1;
 }
 
 void	rr(t_data *data)
@@ -48,8 +46,7 @@ void	rr(t_data *data)
 	rotate(data->stack_a);
 	rotate(data->stack_b);
 	write(1, "rr\n", 3);
-	if (data->flags.has_bench == 1)
-		data->bench.rr += 1;
+	data->bench.rr += 1;
 }
 /* int main()
 {

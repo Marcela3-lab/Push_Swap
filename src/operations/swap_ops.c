@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap_ops.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcebar <marcebar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fdos-rei <fdos-rei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 17:26:32 by marcebar          #+#    #+#             */
-/*   Updated: 2026/06/02 17:27:23 by marcebar         ###   ########.fr       */
+/*   Updated: 2026/06/05 12:03:12 by fdos-rei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,14 @@ void	sa(t_data *data)
 {
 	swap(data->stack_a);
 	write(1, "sa\n", 3);
-	if (data->flags.has_bench == 1)
-		data->bench.sa += 1;
+	data->bench.sa += 1;
 }
 
 void	sb(t_data	*data)
 {
 	swap(data->stack_b);
 	write(1, "sb\n", 3);
-	if (data->flags.has_bench == 1)
-		data->bench.sb += 1;
+	data->bench.sb += 1;
 }
 
 void	ss(t_data *data)
@@ -53,8 +51,7 @@ void	ss(t_data *data)
 	swap(data->stack_a);
 	swap(data->stack_b);
 	write(1, "ss\n", 3);
-	if (data->flags.has_bench == 1)
-		data->bench.ss += 1;
+	data->bench.ss += 1;
 }
 //TESTES MAIN
 /*int main()
