@@ -61,6 +61,7 @@ typedef struct s_bench
 	int		rra;
 	int		rrb;
 	int		rrr;
+	int		sum_ops;
 	float	disorder;
 	int		complexity;
 }	t_bench;

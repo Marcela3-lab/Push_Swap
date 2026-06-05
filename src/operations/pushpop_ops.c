@@ -6,7 +6,7 @@
 /*   By: fdos-rei <fdos-rei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 17:20:17 by marcebar          #+#    #+#             */
-/*   Updated: 2026/06/05 12:06:20 by fdos-rei         ###   ########.fr       */
+/*   Updated: 2026/06/05 12:08:05 by fdos-rei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	pb(t_data *data)
 	stack_addtop(node1, data->stack_b);
 	write(1, "pb\n", 3);
 	data->bench.pb += 1;
+	data->bench.sum_ops += 1;
 }
 
 void	pa(t_data *data)
@@ -59,4 +60,5 @@ void	pa(t_data *data)
 	stack_addtop(node1, data->stack_a);
 	write(1, "pa\n", 3);
 	data->bench.pa += 1;
+	data->bench.sum_ops += 1;
 }

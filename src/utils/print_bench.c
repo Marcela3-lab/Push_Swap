@@ -28,14 +28,8 @@ static void	print_strategy(int s, int c)
 
 static void	print_sum_ops(t_bench *bench)
 {
-	int	sum_ops;
-
-	sum_ops = bench->pa + bench->pb
-		+ bench->sa + bench->sb + bench->ss
-		+ bench->ra + bench->rb + bench->rr
-		+ bench->rra + bench->rrb + bench->rrr;
 	write(2, "[bench] total_ops: ", 19);
-	ft_putnbr_fd((int)sum_ops, 2);
+	ft_putnbr_fd(bench->sum_ops, 2);
 	write(2, "\n", 1);
 }
 
