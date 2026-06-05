@@ -87,9 +87,21 @@ Errors include, for example: arguments that are not integers, integers outside t
 
 # NAO ESQUECER:
 - norminette
-- substituir printf por ft_printf se usarmos
-- fazer free cada vez que ha chamadas de funcoes que usam malloc - verificar com valgrind --leak-check=full
-- mudar algumas funcoes para static
 - mudar nomes de ficheiros e funcoes para ingles - separar palavras por _
-- ficheiro Readme
 - passar ft_atol para utils porque nao e da Libft
+- Testar live code
+
+ERROS 5/jun
+ $>Push_Swap git:(main) ✗ ./push_swap --bench "4 67 3 87 23"
+Error
+
+$>./push_swap --bench 4 67 3 87 23 
+FUNCIONA
+Outro exemplo:
+➜  Push_Swap git:(main) ✗ ARG="4 67 3 87 23"; ./push_swap --complex $ARG | ./checker_linux $ARG
+Error
+KO
+➜  Push_Swap git:(main) ✗ ./push_swap --complex 4 67 3 87 23 | ./checker_linux 4 67 3 87 23    
+OK
+➜  Push_Swap git:(main) ✗ 
+

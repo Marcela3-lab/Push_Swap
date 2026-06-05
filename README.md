@@ -1,4 +1,4 @@
-This project has been created as part of the 42 curriculum by <marcebar>,<fdos-rei>.
+*This project has been created as part of the 42 curriculum by marcebar and fdos-rei.*
 
 # Push_Swap
 ## Description
@@ -29,6 +29,14 @@ Sort a stack of integers in ascending order using the minimum number of operatio
 # Algorithm Selection and Justification
 
 In this project, we implemented different sorting strategies depending on the size of the input. The goal was to reduce the number of operations while respecting the strict constraints of the push_swap rules. We designed three approaches based on input complexity.
+
+## Sort Small Algorithm (O(1))
+
+For inputs of 2 or 3 elements, a dedicated hardcoded sorting routine is used.
+These cases can always be solved in at most 2–3 operations regardless of the
+values provided, so no dynamic algorithm selection is needed.
+
+This routine runs only if no algorithm flag is passed in the arguments and is the most efficient possible solution for these edge cases, since every operation can be done without using a second stack.
 
 ## Simple Algorithm (O(n²))
 
@@ -71,6 +79,39 @@ It scales efficiently for large datasets
 It avoids comparisons by using bitwise operations
 
 Its complexity is O(n log n), making it the most efficient solution for large inputs within the constraints of the project.
+
+## Adaptive Algorithm Selection (Default Behaviour)
+
+By default, when no flags are provided, push_swap uses an adaptive strategy 
+that automatically selects the appropriate sorting algorithm based on two 
+factors: the size of the input and its disorder level.
+
+The disorder level is computed as a percentage that measures how far the 
+current stack is from being sorted. Based on this metric, the program 
+dynamically chooses between the simple, medium, or complex algorithm — 
+ensuring that small or nearly-sorted inputs are handled efficiently without 
+unnecessary overhead.
+
+This adaptive selection is the default behaviour of the program unless a 
+specific flag is passed to override it.
+
+## Contributions
+
+This project was developed collaboratively by *marcebar* and *fdos-rei*.
+
+**fdos-rei** was responsible for:
+- Stack data structure implementation and initialisation (nodes, stack operations)
+- All 11 sorting operations (sa, sb, ss, pa, pb, ra, rb, rr, rra, rrb, rrr)
+- Sorting algorithms (sort small, simple, complex)
+- Adaptive algorithm selection based on disorder metric
+- Benchmark mode (--bench flag)
+
+**marcebar** was responsible for:
+- Argument parsing (flags initialization, handling integers)
+- Error management (duplicates, overflow, and invalid characters)
+- Memory management and leak-free cleanup across all execution paths
+- Sorting algorithms (medium)
+- Integration testing and edge case validation
 
 ## Resources
 
