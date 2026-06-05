@@ -6,7 +6,7 @@
 /*   By: fdos-rei <fdos-rei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 14:50:11 by fdos-rei          #+#    #+#             */
-/*   Updated: 2026/06/05 14:50:12 by fdos-rei         ###   ########.fr       */
+/*   Updated: 2026/06/05 16:22:33 by fdos-rei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,31 +56,28 @@ static int	*return_numbers(char **argv, int argc, int *size)
 int	*splitfirst(int argc, char **argv, int *size)
 {
 	int		i;
-	int		index; // da para reduzir a funcao retirando esta variavel?
+	int		index;
 	int		*numbers;
 	char	**res;
-	int		j;
 
-	j = 0;
-	i = 1;
+	i = 0;
 	index = 0;
 	numbers = return_numbers(argv, argc, size);
 	if (!numbers)
 		return (NULL);
-	while (i < argc)
+	while (++i < argc)
 	{
 		if (!jump_flags(argv[i]))
 		{
 			res = split_args(argv[i], ' ');
 			if (!res)
 				return (free(numbers), NULL);
-			if (!num_valid(res[j]))
+			if (!num_valid(res[0]))
 				return (free(numbers), NULL);
 			if (numbers_verifications(res, numbers, &index))
 				free_and_exit(res, numbers);
 			free_split(res);
 		}
-		i++;
 	}
 	return (numbers);
 }
