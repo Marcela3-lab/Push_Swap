@@ -6,7 +6,7 @@
 /*   By: fdos-rei <fdos-rei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 17:20:17 by marcebar          #+#    #+#             */
-/*   Updated: 2026/06/05 12:02:31 by fdos-rei         ###   ########.fr       */
+/*   Updated: 2026/06/05 12:06:20 by fdos-rei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,45 +60,3 @@ void	pa(t_data *data)
 	write(1, "pa\n", 3);
 	data->bench.pa += 1;
 }
-/* int main()
-{
-	t_stack *a = malloc(sizeof(t_stack));
-	t_stack *b = malloc(sizeof(t_stack));
-	t_node *node1 = malloc(sizeof(t_node));
-	t_node *node2 = malloc(sizeof(t_node));
-	t_node *node3 = malloc(sizeof(t_node));
-
-	node1->index = -1;
-	node1->value = 1;
-	node2->index = -1;
-	node2->value = 2;
-	node3->index = -1;
-	node3->value = 3;
-	node3->next = NULL;
-	node3->prev = node1;
-	node2->next = NULL;
-	node2->prev = NULL;
-	node1->next = node3;
-	node1->prev = NULL;
-	a -> head = node1;
-	a -> tail = node3;
-	a -> size = 2;
-	b -> head = node2;
-	b -> tail = node2;
-	b -> size = 1;
-
-	printf("BEFORE\na->head->value: %d\nsize a: %zu\n", a->head->value, a->size);
-	printf("BEFORE\nb->head->value: %d\nsize b: %zu\n", b->head->value, b->size);
-	pb(a, b);
-	printf("AFTER\na->head->value: %d\nsize a: %zu\n", a->head->value, a->size);
-	printf("AFTER\nb->head->value: %d\nsize b: %zu\n", b->head->value, b->size);
-	pa(b, a);
-	printf("AFTER\na->head->value: %d\nsize a: %zu\n", a->head->value, a->size);
-	printf("AFTER\nb->head->value: %d\nsize b: %zu\n", b->head->value, b->size);
-	free(a);
-	free(b);
-	free(node1);
-	free(node2);
-	free(node3);
-	return(0);
-} */
