@@ -4,7 +4,22 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror -Isrc -Ilibft
 
-SRCS = $(shell find src -name "*.c" ! -name "main_test.c")
+SRCS = src/start_program.c \
+	src/push_swap.c \
+	src/parsing/array_int.c \
+	src/parsing/verify_errors.c \
+	src/sorting/complex.c \
+	src/sorting/medium.c \
+	src/sorting/simple.c \
+	src/sorting/sort_small.c \
+	src/operations/pushpop_ops.c \
+	src/operations/revrotatestacks_ops.c \
+	src/operations/rotatestacks_ops.c \
+	src/operations/swap_ops.c \
+	src/utils/ft_error.c \
+	src/utils/initialize_stacks.c \
+	src/utils/normalize_index.c \
+	src/utils/print_bench.c
 
 OBJS = $(SRCS:.c=.o) 
 
@@ -21,11 +36,6 @@ $(LIBFT):
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
-	
-OBJS_NO_MAIN = $(filter-out src/push_swap.o, $(OBJS))
-
-test: src/main_test.c $(OBJS_NO_MAIN) $(LIBFT)
-	$(CC) $(CFLAGS) src/main_test.c $(OBJS_NO_MAIN) $(LIBFT) -o test
 
 clean:
 	rm -f $(OBJS)

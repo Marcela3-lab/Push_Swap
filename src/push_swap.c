@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcebar <marcebar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fdos-rei <fdos-rei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 15:44:20 by fdos-rei          #+#    #+#             */
-/*   Updated: 2026/06/07 15:31:42 by marcebar         ###   ########.fr       */
+/*   Updated: 2026/06/07 15:55:18 by fdos-rei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	main(int argc, char **argv)
 	nbr = splitfirst(argc, argv, &size);
 	if (!nbr)
 		free_and_exit(NULL, NULL);
+	for (int i = 0; i < size; i++)
+    printf("numbers[%d] = %d\n", i, nbr[i]);
 	ft_bzero(&data, sizeof(t_data));
 	data.flags = verify_flags(argc, argv);
 	data.stack_a = stack_init(nbr, size);
