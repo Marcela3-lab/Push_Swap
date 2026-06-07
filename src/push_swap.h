@@ -6,7 +6,7 @@
 /*   By: marcebar <marcebar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 15:44:33 by fdos-rei          #+#    #+#             */
-/*   Updated: 2026/06/07 13:22:51 by marcebar         ###   ########.fr       */
+/*   Updated: 2026/06/07 15:33:10 by marcebar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,8 +97,7 @@ int		count_args(char **res);
 int		ft_isdigit(int c); // libft
 size_t	ft_strlen(const char *s); //libft
 int		num_valid(char **str);
-int		verificar_erros(char **args, int size);
-t_flags	verificar_flags(int argc, char **argv);
+t_flags	verify_flags(int argc, char **argv);
 int		numbers_verifications(char **res, int *numbers);
 t_node	*get_min_node(t_node *current);
 void	pop_stack(t_node *node, t_stack *stack);
