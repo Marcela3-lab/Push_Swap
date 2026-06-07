@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   verify_errors.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcebar <marcebar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fdos-rei <fdos-rei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 14:50:16 by fdos-rei          #+#    #+#             */
-/*   Updated: 2026/06/07 16:19:46 by marcebar         ###   ########.fr       */
+/*   Updated: 2026/06/07 17:04:33 by fdos-rei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,18 +116,3 @@ int	numbers_verifications(char **res, int *numbers, int *index)
 	}
 	return (0);
 }
-
-// int	main(int argc, char **argv)
-// {
-// 	int		i;
-// 	int res;
-// 	int arr[] = {4, 6, 42};
-// 	i = 1;
-// 	// while (i < argc)
-// 	// {
-// 	// 	i++;
-// 	// }
-// 	res = num_duplicate(arr, 2);
-// 	printf("%d",res);
-// 	return (0);
-// }
