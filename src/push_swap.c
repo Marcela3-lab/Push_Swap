@@ -6,7 +6,7 @@
 /*   By: marcebar <marcebar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 15:44:20 by fdos-rei          #+#    #+#             */
-/*   Updated: 2026/06/07 12:24:56 by marcebar         ###   ########.fr       */
+/*   Updated: 2026/06/07 15:31:42 by marcebar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int argc, char **argv)
 	if (!nbr)
 		free_and_exit(NULL, NULL);
 	ft_bzero(&data, sizeof(t_data));
-	data.flags = verificar_flags(argc, argv);
+	data.flags = verify_flags(argc, argv);
 	data.stack_a = stack_init(nbr, size);
 	if (!data.stack_a)
 		free_and_exit(NULL, nbr);

@@ -6,7 +6,7 @@
 /*   By: fdos-rei <fdos-rei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 14:50:16 by fdos-rei          #+#    #+#             */
-/*   Updated: 2026/06/07 15:32:24 by fdos-rei         ###   ########.fr       */
+/*   Updated: 2026/06/07 15:38:44 by fdos-rei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ static void	set_strategy(t_flags *flags, char *arg)
 	flags->has_flags = 1;
 }
 
-t_flags	verificar_flags(int argc, char **argv)
+t_flags	verify_flags(int argc, char **argv)
 {
 	int		i;
 	t_flags	flags;
