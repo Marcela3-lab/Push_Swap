@@ -6,7 +6,7 @@
 /*   By: marcebar <marcebar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 14:50:16 by fdos-rei          #+#    #+#             */
-/*   Updated: 2026/06/05 19:25:35 by marcebar         ###   ########.fr       */
+/*   Updated: 2026/06/07 13:22:29 by marcebar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,24 +29,30 @@ static int	num_duplicate(int *arr, int j)
 	return (0);
 }
 
-int	num_valid(char *str)
+int	num_valid(char **str)
 {
 	int	i;
+	int j;
 
+	j = 0;
 	if (!str)
 		return (0);
-	i = 0;
-	if (str[i] == '-' || str[i] == '+')
-		i++;
-	if (!str[i])
-		return (0);
-	while (str[i])
+	while(str[j] != NULL)
 	{
-		if (!ft_isdigit(str[i]))
-		{
+		i = 0;
+		if (str[j][i] == '-' || str[j][i] == '+')
+			i++;
+		if (!str[j][i])
 			return (0);
+		while (str[j][i])
+		{
+			if (!ft_isdigit(str[j][i]))
+			{
+				return (0);
+			}
+			i++;
 		}
-		i++;
+		j++;
 	}
 	return (1);
 }

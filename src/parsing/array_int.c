@@ -6,7 +6,7 @@
 /*   By: marcebar <marcebar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 14:50:11 by fdos-rei          #+#    #+#             */
-/*   Updated: 2026/06/05 19:27:32 by marcebar         ###   ########.fr       */
+/*   Updated: 2026/06/07 13:28:44 by marcebar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	*splitfirst(int argc, char **argv, int *size)
 	int		i;
 	int		*numbers;
 	char	**res;
-
+	
 	i = 0;
 	numbers = return_numbers(argv, argc, size);
 	if (!numbers)
@@ -70,7 +70,7 @@ int	*splitfirst(int argc, char **argv, int *size)
 			res = ft_split(argv[i], ' ');
 			if (!res)
 				return (free(numbers), NULL);
-			if (!num_valid(res[0]))
+			if (!num_valid(res))
 				return (free(numbers), free_split(res), NULL);
 			if (numbers_verifications(res, numbers))
 				free_and_exit(res, numbers);
@@ -78,4 +78,14 @@ int	*splitfirst(int argc, char **argv, int *size)
 		}
 	}
 	return (numbers);
+}
+
+int	count_args(char **res)
+{
+	int	i;
+
+	i = 0;
+	while (res[i])
+		i++;
+	return (i);
 }
