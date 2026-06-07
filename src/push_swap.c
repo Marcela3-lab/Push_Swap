@@ -6,7 +6,7 @@
 /*   By: fdos-rei <fdos-rei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 15:44:20 by fdos-rei          #+#    #+#             */
-/*   Updated: 2026/06/07 16:56:38 by fdos-rei         ###   ########.fr       */
+/*   Updated: 2026/06/07 17:35:01 by fdos-rei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,9 @@ int	main(int argc, char **argv)
 		free_and_exit(NULL, nbr);
 	}
 	free(nbr);
-	start_program(&data);
-	if (data.flags.has_bench == 1)
+	if (size > 0)
+		start_program(&data);
+	if (data.flags.has_bench == 1 && data.stack_a->size > 0)
 		print_bench(&data);
-	stack_clear(&data.stack_a);
-	stack_clear(&data.stack_b);
-	return (0);
+	return (stack_clear(&data.stack_a), stack_clear(&data.stack_b), 0);
 }
