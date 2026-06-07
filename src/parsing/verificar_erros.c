@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   verificar_erros.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcebar <marcebar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fdos-rei <fdos-rei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 14:50:16 by fdos-rei          #+#    #+#             */
-/*   Updated: 2026/06/07 13:22:29 by marcebar         ###   ########.fr       */
+/*   Updated: 2026/06/07 15:32:24 by fdos-rei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ static int	num_duplicate(int *arr, int j)
 int	num_valid(char **str)
 {
 	int	i;
-	int j;
+	int	j;
 
 	j = 0;
 	if (!str)
 		return (0);
-	while(str[j] != NULL)
+	while (str[j] != NULL)
 	{
 		i = 0;
 		if (str[j][i] == '-' || str[j][i] == '+')
@@ -98,7 +98,7 @@ int	numbers_verifications(char **res, int *numbers)
 	int			size;
 	long long	num;
 	int			index;
-	
+
 	index = 0;
 	size = count_args(res);
 	j = 0;

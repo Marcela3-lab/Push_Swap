@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   array_int.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcebar <marcebar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fdos-rei <fdos-rei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 14:50:11 by fdos-rei          #+#    #+#             */
-/*   Updated: 2026/06/07 13:28:44 by marcebar         ###   ########.fr       */
+/*   Updated: 2026/06/07 15:29:35 by fdos-rei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	*splitfirst(int argc, char **argv, int *size)
 	int		i;
 	int		*numbers;
 	char	**res;
-	
+
 	i = 0;
 	numbers = return_numbers(argv, argc, size);
 	if (!numbers)
