@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   verificar_erros.c                                  :+:      :+:    :+:   */
+/*   verify_errors.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fdos-rei <fdos-rei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marcebar <marcebar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 14:50:16 by fdos-rei          #+#    #+#             */
-/*   Updated: 2026/06/07 15:38:44 by fdos-rei         ###   ########.fr       */
+/*   Updated: 2026/06/07 16:19:46 by marcebar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,14 +92,12 @@ t_flags	verify_flags(int argc, char **argv)
 	return (flags);
 }
 
-int	numbers_verifications(char **res, int *numbers)
+int	numbers_verifications(char **res, int *numbers, int *index)
 {
 	int			j;
 	int			size;
 	long long	num;
-	int			index;
 
-	index = 0;
 	size = count_args(res);
 	j = 0;
 	while (j < size)
@@ -107,13 +105,13 @@ int	numbers_verifications(char **res, int *numbers)
 		num = ft_atoi(res[j]);
 		if (num > INT_MAX || num < INT_MIN)
 			return (1);
-		numbers[index] = (int)num;
-		if (index >= 1)
+		numbers[*index] = (int)num;
+		if (*index >= 1)
 		{
-			if (num_duplicate(numbers, index))
+			if (num_duplicate(numbers, *index))
 				return (1);
 		}
-		index++;
+		(*index)++;
 		j++;
 	}
 	return (0);
